@@ -518,17 +518,18 @@ tr {
 }
 
 img {
-  width: 200px;	
-  margin: 0 auto;
-  display: block;
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  border: 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
 }
 
 iframe {
@@ -2739,12 +2740,13 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 }
 
 .header .main-header {
-  position: relative;
-  padding: 40px 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+    position: relative;
+    background: rgba(12, 12, 12, 0.74);
+    padding: 40px 0 10px 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .header .main-header .info-contact {
