@@ -348,7 +348,7 @@
                         </div>
                         <%  @services.each do |service|%>
 
-                              <div class="col-lg-3 col-sm-6 col-xs-12">
+                              <div class="col-lg-6 col-sm-6 col-xs-12">
                             <h3 class="h5 text-uppercase mb-10 service"><a href="service-single.html"><%= service.name%> <br><br></a></h3>
                             <div class="post-thumbnail hover-link">
                                 <%= (image_tag service.service_images.where(order: 1).first.imagen_url , class:"service-img" )%>
