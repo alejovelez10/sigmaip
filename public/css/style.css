@@ -17,17 +17,22 @@ body {
 }
 .service-img{
 
-  height: 170px !important;
-
+  height: 260px !important;
+  width: 80% !important;
 }
 .service-desc{
 
-height: 230px;
-max-height: 230px;
+height: 150px;
+max-height: 150px;
 overflow: hidden;
 
 }
-
+.ov
+{
+  margin-left: 10% !important;
+    width: 80% !important;
+  
+}
 #page-wrap {
   position: relative;
   overflow: hidden;
