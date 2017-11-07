@@ -15,7 +15,7 @@ body {
   max-height: 35px;
   overflow: hidden;
 }
-.service p{
+.service-desc p{
 
     text-align: justify !important;
     padding: 0px 20px !important;
