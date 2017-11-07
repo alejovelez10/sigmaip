@@ -9,6 +9,25 @@ body {
   margin: 0;
 }
 
+.service{
+
+  height: 35px;
+  max-height: 35px;
+  overflow: hidden;
+}
+.service-img{
+
+  height: 170px !important;
+
+}
+.service-desc{
+
+  height: 100px;
+  max-height: 100px;
+  overflow: hidden;
+
+}
+
 #page-wrap {
   position: relative;
   overflow: hidden;
@@ -6654,3 +6673,4 @@ button.mfp-arrow:after {
     opacity: 0;
   }
 }
+

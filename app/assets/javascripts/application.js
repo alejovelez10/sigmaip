@@ -11,5 +11,21 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+//= require ckeditor-jquery
+//= require jquery_nested_form
 //= require turbolinks
+//= require config
 //= require_tree .
+
+
+
+$(document).on('turbolinks:load',function() {
+
+
+$('.ckeditor').ckeditor({
+  // optional config
+});
+
+});

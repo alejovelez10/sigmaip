@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+
+.login1
+    {
+    margin-top:10px;    
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px !important;
+    padding-right: 50px  !important;
+       background: white;
+
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+      p
+      {
+        padding:10px;
+      }
+
+    }
+
+
+
+
+.sign_form
+{
+  margin-top:30px;
+}
+
+.titulo-form
+{
+   font-family: 'Days One', sans-serif;
+    text-align:center;
+    font-size: 2em;
+    margin: 0px;
+       
+    color: #b9b9b9;
+}

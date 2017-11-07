@@ -1,0 +1,130 @@
+<div class="row">
+<div class="col-md-12" style="padding-top: 10px;">
+<%= nested_form_for(@service) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :service_name, class: "form form-control" %>
+  </div>
+  </div>
+  </div>
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :service_description,   class: "ckeditor" %>
+  </div>
+ </div>
+
+<div class="col-md-6">
+  <div class="form-group">
+    <%= form.label :sub_services %>
+    <%= form.text_area :sub_services, id: :service_sub_services,  class: "ckeditor" %>
+  </div>
+</div>  
+</div> 
+<div class="row">
+  
+
+<div class="col-lg-12">
+   
+    <h3 class = "" style = "margin :0px 0px 5px 0;color:gray">Imagenes</h3>
+
+    <%= form.fields_for :service_images do |contact|  %>
+  <div class="clearfix">
+ <div class="col-md-12" >
+
+  
+    <div class="col-md-1 pdd" >
+     <%= contact.link_to_remove do %>
+<i style = "    color: #e74b09;
+    font-size: 18px;
+    margin-left: 0px;
+    position: relative;
+    left: -18px;" class="fa fa-trash" aria-hidden="true"></i>
+  <% end %>
+    <%= contact.label "Orden" %>
+   <%= contact.number_field :order, :class => 'form-control' %>
+    </div>
+      <div class="col-md-5 pdd" >
+    <%= contact.label "Nombre" %>
+    <%= contact.text_field :name, :class => 'form-control' %>
+    </div>
+          <div class="col-md-3 pdd" >
+    <%= contact.label "Imagen" %>
+    <%= contact.file_field :imagen, :class => 'form-control' %>
+    </div>
+     <div class="col-md-3 pdd" >
+   <label for="">Mostrar</label><br>
+               <label class="radio-inline">
+               <%= contact.radio_button :first, true, class: 'rb cksi check1' %><span style = "">Si</span></label>
+                 <label class="radio-inline">
+                     <%= contact.radio_button :first, false, class: 'rb cksi check1' %><span style = "">No</span>
+               </label>
+
+    </div>
+     
+
+
+  <%= contact.hidden_field :user_id ,:value =>  current_user.id %>
+
+   
+   </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+<%end%>
+ 
+
+<%= form.link_to_add "Agregar Imagen", :service_images, :class => 'btn btn-primary', style: "margin-top:10px;"  %>
+    </div>
+
+</div>
+
+
+  <%form.hidden_field :user_id, :value => current_user.id %>
+<div class="row" style="margin-top:50px;">
+
+  
+
+<div class="col-lg-12">
+  <div class="actions">
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+   </div>  </div>
+<% end %>
+  </div>
+  </div>
+
+
+       <script>
+
+ if ("<%=action_name%>" != "edit")
+{
+            $('.cksi').prop('checked', true);
+ 
+
+}
+
+
+
+   </script>

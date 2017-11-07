@@ -26,9 +26,27 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'devise', '~> 4.3'
+gem 'carrierwave', '~> 0.11.2'
+gem 'will_paginate',           '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'annotate'
 gem "font-awesome-rails"
-
+gem "mini_magick"
+gem 'active_decorator', '~> 0.7.1'
+gem 'jquery-validation-rails'
+gem 'twitter-bootstrap-rails', '~> 4.0'
+gem 'therubyracer',  platforms: :ruby
+gem 'pusher', '~> 1.3'
+gem 'jquery-ui-rails'
+gem "figaro"
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'ckeditor_rails', '~> 4.5', '>= 4.5.10'
+gem "mini_magick"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
