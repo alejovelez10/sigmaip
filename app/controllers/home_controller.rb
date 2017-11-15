@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   def servicios
     @services = Service.all.order(updated_at: :asc)
   end
+
+  def servicio
+    @servicio = Service.find(params[:id])
+  end
 end

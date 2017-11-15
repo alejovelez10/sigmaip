@@ -1,0 +1,86 @@
+ <section id="sub-header" class="section bg-parallax pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1><%=@servicio.name%></h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "#{@servicio.name}", servicios_path,  data: { turbolinks: false }%></li>
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+    <!-- END / SUB HEADER -->
+
+    <!-- CONTENT -->
+    <section class="section bg-white pt-70 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6  col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                           
+                            <div class="work-slider mb-20">
+                                <% @servicio.service_images.each do |img|%>
+                                <%= (image_tag img.imagen_url, style: "width:500px;") if img.imagen_url %>
+                               
+                                <%end%>
+                            </div><!-- /work-slider -->
+
+                            <div class="work-item-slider-wrapper">
+                                <div class="work-item-slider">
+                                <%if @servicio.service_images.count > 1%>
+                                <% @servicio.service_images.each do |img|%>
+                                 <a href="#"><%= (image_tag img.imagen_url, style: "width:150px;height:80px") if img.imagen_url %></a>
+                               
+                                <%end%>
+                                <%end%>
+           
+                                </div><!-- /work-slider -->
+                            </div><!-- /work-item-slider-wrapper -->
+                               </main>
+              </div><!-- /col -->
+               </div><!-- /col -->
+               <div class="col-md-6  col-sm-12 col-xs-12">
+                            
+                            <div class="page-grid">
+                                <!-- GRID 9 COLUMNS -->
+                                <div class="page-content col-12">
+                                    <h2 class="section-header">Descripción</h2>
+                                    <%==@servicio.description%>
+                                </div><!-- /page-content -->
+
+            
+                            </div><!-- /page-grid -->
+
+                            
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+                       
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                <div class="divider pt-20"></div>
+                                     <h2 class="section-header">Servicios Especificos</h2>
+                                   <p><%==@servicio.sub_services%></p>
+                                    
+                                </div><!-- /col -->
+                            </div><!-- /row -->
+
+                        
+                     
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>

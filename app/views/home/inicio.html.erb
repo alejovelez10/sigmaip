@@ -338,7 +338,8 @@
                             <div class="mb-30 service-desc">
                                 <p><%== service.description%></p>
                             </div>
-                               <a href="service-single.html"  class="btn btn-primary radius mb-30">Ver mas</a>
+                            <%= link_to "Ver mas", servicio_path(service) ,class: "btn btn-primary radius mb-30",  data: { turbolinks: false } %>
+                               
                         </div>
 
 
