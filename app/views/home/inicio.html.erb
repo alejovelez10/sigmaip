@@ -41,33 +41,13 @@
             <nav class="navigation nav1" data-menu-type="1199">
                 <ul class="nav text-uppercase">
                     <li class="menu-item-has-children">
-                        <a href="#">
-                            Inicio
-                            <span class="fa fa-angle-down"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Homepage 1</a></li>
-                            <li><a href="index-2.html">Homepage 2</a></li>
-                            <li><a href="index-3.html">Homepage 3</a></li>
-                            <li><a href="index-4.html">Homepage 4</a></li>
-                            <li><a href="index-5.html">Homepage 5</a></li>
-                            <li><a href="index-6.html">Homepage 6</a></li>
-                            <li><a href="index-7.html">Homepage 7</a></li>
-                        </ul>
+                       <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%>
                     </li>
       
                     <li class="menu-item-has-children">
-                        <a href="#">
-                            Quines somos
-                            <span class="fa fa-angle-down"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="about-us.html">About us</a></li>
-                            <li><a href="history.html">History</a></li>
-                            <li><a href="our-leaders.html">Our Leaders</a></li>
-                        </ul>
+                        <%= link_to "Quienes Somos", inicio_path,  data: { turbolinks: false }%>
                     </li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
                     <li class="menu-item-has-children">
                         <a href="#">
                             Experiencia
@@ -358,7 +338,7 @@
                             <div class="mb-30 service-desc">
                                 <p><%== service.description%></p>
                             </div>
-                               <a href="service-single.html" style="margin-left: 20px;" class="btn btn-primary radius mb-30">Ver mas</a>
+                               <a href="service-single.html"  class="btn btn-primary radius mb-30">Ver mas</a>
                         </div>
 
 
@@ -831,7 +811,7 @@
                             <div class="logo">
                                 <a href="index.html"><img src="../../img/logo_white_txt.png" alt="logo" /></a>
                             </div><!-- /#logo -->
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <p>Ingeniería y Proyectos Sigma S.A.S. es una empresa de Ingeniería, montaje y consultoría en las áreas eléctrica, instrumentación industrial, control y telecomunicaciones.</p>
                             <ul class="social-list">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -843,8 +823,8 @@
 
                     <div class="col-md-3 col-md-push-6 col-sm-6 col-xs-12">
                         <aside class="widget widget_subscribe">
-                            <h3 class="widget-title h4">News letter</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <h3 class="widget-title h4">Contactanos</h3>
+                          
                             <form action="subscribe" method="post">
                                 <input type="text" name="name" value="" placeholder="Name" class="black mb-30">
                                 <input type="email" name="email" value="" placeholder="Email" class="black mb-30">
@@ -857,27 +837,26 @@
 
                     <div class="col-md-3 col-md-pull-3 col-sm-6 col-xs-12">
                         <aside class="widget widget_contact">
-                            <h3 class="widget-title h4">Get in touchs</h3>
+                            <h3 class="widget-title h4">Encuentranos en:</h3>
                             <ul>
-                                <li><i class="fa fa-map-marker"></i>1422 1st St. Santa Rosa,t CA 94559. United States</li>
-                                <li><i class="icon icon-phone"></i>(123) 45678910</li>
-                                <li><i class="icon icon-paper-plane"></i><a href="#">info@osthemes.com</a></li>
-                                <li><i class="fa fa-mobile"></i>(123) 45678910</li>
-                                <li><i class="icon icon-clock"></i>Mon - Sat: 9:00 - 18:00</li>
+                                <li><i class="fa fa-map-marker"></i>Dir. CR 33 # 28-10 INT 313</li>
+                                <li><i class="icon icon-phone"></i>+574 2985861</li>
+                                <li><i class="icon icon-paper-plane"></i><a href="#">churtado@sigmaip.co</a></li>
+                                <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                
                             </ul>
                         </aside><!-- /widget_contact -->
                     </div><!-- /col -->
 
                     <div class="col-md-3 col-md-pull-3 col-sm-6 col-xs-12">
                         <aside class="widget widget_infomation">
-                            <h3 class="widget-title h4">Infomation</h3>
+                            <h3 class="widget-title h4">Servicios</h3>
                             <ul class="list-style">
-                                <li><a href="#">History of Brooklyn</a></li>
-                                <li><a href="#">Penang Street Food</a></li>
-                                <li><a href="#">The mist of madagascar</a></li>
-                                <li><a href="#">J.R.R. Tolkien</a></li>
-                                <li><a href="#">Morocco Road Trip</a></li>
-                                <li><a href="#">The noise - Elixir</a></li>
+                                <li><a href="#">Ingeniera Electrica</a></li>
+                                <li><a href="#">Instrumentación y Control</a></li>
+                                <li><a href="#">Telecomunicaciónes</a></li>
+                                <li><a href="#">Consultoria e Interventoria </a></li>
+                                
                             </ul>
                         </aside><!-- /widget_infomation -->
                     </div><!-- /col -->
@@ -888,12 +867,12 @@
         <div class="foot-credit">
             <div class="container">
                 <ul>
-                    <li><a href="input.html">Home</a></li>
-                    <li><a href="about-us.html">Who we are</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="work4col.html">Our work</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
+                    <li><%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Quienes Somos", inicio_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Servicios", inicio_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Blog Sigmaip", inicio_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Contactenos", inicio_path,  data: { turbolinks: false }%></li>
+                  
                 </ul>
                 <p>Cortana &copy; 2015 By MegaDrupal. All rights Reserved</p>
             </div><!-- /container -->

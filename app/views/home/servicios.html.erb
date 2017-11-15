@@ -1,0 +1,54 @@
+ <section id="sub-header" class="section bg-parallax pt-0 pb-0" data-background="img/bg/demo1.jpg" style = "">
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Nuestros Servicios</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
+                        <li>Servicios</li>
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+
+  <section class="section bg-white bd-b pt-70 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                 
+                   
+
+                    <div class="row">
+                    
+                        <%  @services.each do |service|%>
+
+                              <div class="col-lg-6 col-sm-6 col-xs-12" style = "margin-bottom: 35px;">
+                            <h3 class="h4 text-uppercase mb-10 service"><a href="service-single.html"><%= service.name%> <br><br></a></h3>
+                            <div class="post-thumbnail hover-link">
+                                <%= (image_tag service.service_images.where(order: 1).first.imagen_url , class:"service-img" )%>
+                                
+                                <a href="service-single.html" class="overlay ov"><i class="fa fa-link"></i></a>
+                            </div><!--/ post-thumbnail -->
+                            <div class="mb-30 service-desc">
+                                <p><%== service.description%></p>
+                            </div>
+                               <a href="service-single.html" class="btn btn-primary radius mb-30">Ver mas</a>
+                        </div>
+
+
+                        <%end%>
+
+               
+                    </div><!-- /row -->
+                </div><!-- /col -->
+
+              
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>

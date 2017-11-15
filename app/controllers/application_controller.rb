@@ -18,6 +18,10 @@ protected
       
    
     'home' 
+     elsif (controller_name == 'home' and (action_name == "servicios")) 
+      
+   
+    'page' 
 
 
       
