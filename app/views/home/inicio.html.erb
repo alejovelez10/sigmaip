@@ -23,7 +23,7 @@
         <div class="container">
             <!-- LOGO -->
             <div class="logo">
-                <a href="index.html"><img src="../../img/logo.png" alt="logo" /></a>
+                <a href="index.html"><img src="../../img/logo1.png" alt="logo" /></a>
             </div><!-- /#logo -->
             <!-- END / LOGO -->
 
@@ -45,7 +45,7 @@
                     </li>
       
                     <li class="menu-item-has-children">
-                        <%= link_to "Quienes Somos", inicio_path,  data: { turbolinks: false }%>
+                        <%= link_to "Quiénes Somos", nosotros_path,  data: { turbolinks: false }%>
                     </li>
                     <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
                     <li class="menu-item-has-children">
@@ -79,6 +79,53 @@
         <div class="tp-banner-container">
             <div class="tp-banner" >
                 <ul>
+                                    <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-thumb="../../img/slider/thumb/thumb-1.jpg"  data-saveperformance="on" data-title="Slider 1">
+                        <!-- MAIN IMAGE -->
+                        <img src="../../img/slider/dummy.png"  alt="slidebg1" data-lazyload="../../img/slider/slide-111.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption grey_heavy_72 lfl tp-resizeme rs-parallaxlevel-0 tp-headline"
+                            data-x="center"
+                            data-y="300"
+                            data-speed="500"
+                            data-start="1350"
+                            data-easing="Power3.easeInOut"
+                            data-splitin="lines"
+                            data-splitout="none"
+                            data-elementdelay="0.1"
+                            data-endelementdelay="0.1"
+                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;">Ingenieria y proyectos
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption grey_heavy_72 lfr tp-resizeme rs-parallaxlevel-0 tp-headline-3"
+                            data-x="center"
+                            data-y="370"
+                            data-speed="500"
+                            data-start="1650"
+                            data-easing="Power3.easeInOut"
+                            data-splitin="lines"
+                            data-splitout="none"
+                            data-elementdelay="0.1"
+                            data-endelementdelay="0.1"
+                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;">Procesos dinamicos que suman mucho mas
+                        </div>
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption grey_heavy_72 fade tp-resizeme rs-parallaxlevel-0"
+                            data-x="center"
+                            data-y="440"
+                            data-speed="500"
+                            data-start="2550"
+                            data-easing="Power3.easeInOut"
+                            data-splitin="none"
+                            data-splitout="none"
+                            data-elementdelay="0.1"
+                            data-endelementdelay="0.1"
+                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;">                        <%= link_to "Quiénes Somos", nosotros_path ,class: "btn btn-primary",  data: { turbolinks: false }%>
+                        </div>
+ </li>
+
                  <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-thumb="../../img/slider/thumb/thumb-1.jpg"  data-saveperformance="on"  data-title="Slider 3">
                         <!-- MAIN IMAGE -->
                         <img src="../../img/slider/dummy.png"  alt="slidebg1" data-lazyload="../../images/construccion.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
@@ -127,52 +174,7 @@
                         </div>
                     </li>
                     <!-- SLIDE 1  -->
-                    <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-thumb="../../img/slider/thumb/thumb-1.jpg"  data-saveperformance="on" data-title="Slider 1">
-                        <!-- MAIN IMAGE -->
-                        <img src="../../img/slider/dummy.png"  alt="slidebg1" data-lazyload="../../img/slider/slide-1.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                        <!-- LAYERS -->
 
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption grey_heavy_72 lfl tp-resizeme rs-parallaxlevel-0 tp-headline"
-                            data-x="center"
-                            data-y="300"
-                            data-speed="500"
-                            data-start="1350"
-                            data-easing="Power3.easeInOut"
-                            data-splitin="lines"
-                            data-splitout="none"
-                            data-elementdelay="0.1"
-                            data-endelementdelay="0.1"
-                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;">Ingenieria y proyectos
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption grey_heavy_72 lfr tp-resizeme rs-parallaxlevel-0 tp-headline-3"
-                            data-x="center"
-                            data-y="370"
-                            data-speed="500"
-                            data-start="1650"
-                            data-easing="Power3.easeInOut"
-                            data-splitin="lines"
-                            data-splitout="none"
-                            data-elementdelay="0.1"
-                            data-endelementdelay="0.1"
-                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;">Procesos dinamicos que suman mucho mas
-                        </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption grey_heavy_72 fade tp-resizeme rs-parallaxlevel-0"
-                            data-x="center"
-                            data-y="440"
-                            data-speed="500"
-                            data-start="2550"
-                            data-easing="Power3.easeInOut"
-                            data-splitin="none"
-                            data-splitout="none"
-                            data-elementdelay="0.1"
-                            data-endelementdelay="0.1"
-                            style="z-index: 99; max-width: auto; max-height: auto; white-space: nowrap;"><a href='#' class='btn btn-primary'>Who we are</a>
-                        </div>
 
                     <!-- SLIDE 2 -->
                     <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-thumb="img/slider/thumb/thumb-1.jpg"  data-saveperformance="on"  data-title="Slider 2">
@@ -311,13 +313,25 @@
         </div><!-- /tp-banner-container -->
     </section>
     <!-- END / HOME MEDIA -->
+    <section class="section bg-primary pt-20 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <h3 class="play-font fsi mb-0 text-center text-left-md" style="line-height: 2.3em;color:white">Nosotros somos mas que constructores - nosotros somos parters</h3>
+                </div><!-- /col -->
 
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="text-center text-right-md"><button type="button" class="btn btn-black">Soliciar Cotización</div>
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>
     <!-- ABOUT -->
     <section class="section bg-white bd-b pt-70 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-xs-12">
-                    <h2 class="section-header big">¿QUIENES SOMOS?</h2>
+                    <h2 class="section-header big">Nosotros</h2>
                     <p>Ingeniería y Proyectos Sigma S.A.S. es una empresa de Ingeniería, montaje y consultoría en las áreas eléctrica, instrumentación industrial, control y telecomunicaciones, la cual desarrolla sus trabajos bajo metodologías eficientes que generan valor en la planeación, ejecución, seguimiento y cierre de proyectos, con amplia experiencia en el sector industrial. El mayor interés de ingeniería y proyectos Sigma S.A.S. es ofrecer un servicio integral, dinámico y responsable el cual este orientado a la satisfacción de los objetivos de nuestros clientes y aliados. </p>
 
                     <div class="divider pt-30 pb-40"></div>
@@ -356,246 +370,100 @@
     <!-- END / ABOUT -->
 
     <!-- TESTIMONIAL - CLIENT -->
-    <section class="section bg-gray bd-b pt-70 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <h2 class="section-header">Testimonials</h2>
-                    <div class="testimonial testimonial-slider" data-number-slide="1">
-                        <div class="item">
-                            <div class="testimonial-status white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            <div class="testimonial-author clearfix">
-                                <img src="../../img/team/1.jpg" alt="" class="img-circle" />
-                                <h5 class="text-uppercase text-right">Mark Alexis</h5>
-                                <p class=" text-right">Ceo &amp; Founder - envato</p>
-                            </div><!-- /testimonial-author -->
-                        </div><!-- /item -->
-
-                        <div class="item">
-                            <div class="testimonial-status white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            <div class="testimonial-author clearfix">
-                                <img src="../../img/team/2.jpg" alt="" class="img-circle" />
-                                <h5 class="text-uppercase text-right">Jennifer Holland</h5>
-                                <p class=" text-right">Ceo &amp; Founder - envato</p>
-                            </div><!-- /testimonial-author -->
-                        </div><!-- /item -->
-
-                        <div class="item">
-                            <div class="testimonial-status white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            <div class="testimonial-author clearfix">
-                                <img src="../../img/team/3.jpg" alt="" class="img-circle" />
-                                <h5 class="text-uppercase text-right">Maurell Parker</h5>
-                                <p class=" text-right">Ceo &amp; Founder - envato</p>
-                            </div><!-- /testimonial-author -->
-                        </div><!-- /item -->
-                    </div><!-- /testimonial -->
-                </div><!-- /col -->
-
-                <div class="col-sm-6 col-xs-12">
-                    <h2 class="section-header">Our Certificates</h2>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/1.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/2.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/3.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/4.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/5.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-
-                        <div class="col-lg-4 col-md-6 col-xs-12 mb-30">
-                            <div class="client-logo">
-                                <img src="../../img/client/6.png" alt="" />
-                            </div><!-- /client-logo -->
-                        </div><!-- /col -->
-                    </div><!-- /row -->
-                </div><!-- /col -->
-            </div><!-- /row -->
-        </div><!-- /container -->
-    </section>
+   
     <!-- END / TESTIMONIAL - CLIENT -->
 
     <!-- ICON BOX -->
     <section class="section bg-white pt-50 pb-0">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-lg-push-4 col-sm-6 col-xs-12">
-                    <div class="cortana-icon">
-                        <i class="fa fa-anchor"></i>
-                        <h5 class="text-uppercase">Integrity</h5>
-                        <p>A tradition of ethical and honest business conduct is the cornerstone of our business philosophy, and the foundation of our entire organization.</p>
-                    </div><!-- /cortana-icon -->
+    <div class="col-md-12  col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+          
 
-                    <div class="cortana-icon">
-                        <i class="fa fa-users"></i>
-                        <h5 class="text-uppercase">Staff</h5>
-                        <p>A tradition of ethical and honest business conduct is the cornerstone of our business philosophy, and the foundation of our entire organization.</p>
-                    </div><!-- /cortana-icon -->
-                </div><!-- /col -->
+                            <div class="divider pt-20"></div>
 
-                <div class="col-lg-4 col-lg-push-4 col-sm-6 col-xs-12">
-                    <div class="cortana-icon">
-                        <i class="fa fa-eye"></i>
-                        <h5 class="text-uppercase">Vision</h5>
-                        <p>A tradition of ethical and honest business conduct is the cornerstone of our business philosophy, and the foundation of our entire organization.</p>
-                    </div><!-- /cortana-icon -->
+                            <div class="row">
 
-                    <div class="cortana-icon">
-                        <i class="fa fa-shield"></i>
-                        <h5 class="text-uppercase">Safety</h5>
-                        <p>A tradition of ethical and honest business conduct is the cornerstone of our business philosophy, and the foundation of our entire organization.</p>
-                    </div><!-- /cortana-icon -->
-                </div><!-- /col -->
+                            <h2 class="section-header">Nuestros Valores</h2>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="cortana-icon">
+                                        <i class="fa fa-briefcase"></i>
+                                        <h5 class="text-uppercase">Servicio</h5>
+                                        <p>Todas nuestras acciones están dirigidas a un trabajo comprometido, cordial y eficiente, para brindar satisfacción a las necesidades de nuestro cliente en todo momento.</p>
+                                    </div><!-- /cortana-icon -->
 
-                <div class="col-lg-4 col-lg-pull-8 col-sm-12 col-xs-12">
-                    <img src="../../img/building-girl.png" alt="" />
-                </div><!-- /col -->
+                                    <div class="cortana-icon">
+                                        <i class="fa fa-rocket"></i>
+                                        <h5 class="text-uppercase">Dinamismo</h5>
+                                        <p>Ofreciendo servicios ágiles, flexibles, oportunos y sobretodo somos un equipo de trabajo con profesionales de mente abierta, innovador y con una visión compartida frente a los cambios.</p>
+                                    </div><!-- /cortana-icon -->
+
+                                    <div class="cortana-icon">
+                                        <i class="fa fa-eye"></i>
+                                        <h5 class="text-uppercase">Responsabilidad</h5>
+                                        <p>Somos responsables frente a nuestras obligaciones, con la empresa, el cliente y la sociedad; Planeamos y controlamos el desarrollo de proyectos garantizando la entrega oportuna de manera integral cumpliendo con el alcance y los objetivos planteados, de igual forma con el medio ambiente y el entorno.</p>
+                                    </div><!-- /cortana-icon -->
+
+                                    
+                                </div><!-- /col -->
+
+                                <div class="col-sm-6 col-xs-12">
+                                <div class="cortana-icon">
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <h5 class="text-uppercase">Transparencia</h5>
+                                        <p>Realizamos todos los procesos, operaciones y acuerdos internos y externos de la compañía con honestidad y rectitud, obrando de forma clara, evidente y no generando ambigüedad con nuestros colaboradores, clientes o proveedores.</p>
+                                    </div><!-- /cortana-icon -->
+                                    <div class="cortana-icon">
+                                        <i class="fa fa-handshake-o"></i>
+                                        <h5 class="text-uppercase">Confianza:</h5>
+                                        <p>Trabajamos para que nuestros equipo de colaboradores, clientes y proveedores se sientan seguros, con la certeza que nuestra empresa trabaja con la convicción de hacer mejor las cosas de forma integral, responsable y ofreciendo un precio justo y razonable.</p>
+                                    </div><!-- /cortana-icon -->
+
+                                    <div class="cortana-icon">
+                                        <i class="fa fa-users"></i>
+                                        <h5 class="text-uppercase">Trabajo en equipo:</h5>
+                                        <p>Impulsamos e incentivamos el trabajo cooperativo dentro de la organización, mejorando las sinergias de nuestros procesos internos y externos, obteniendo el máximo de las capacidades de nuestro talento humano y asegurando el aprendizaje organizacional de la compañía.</p>
+                                    </div><!-- /cortana-icon -->
+
+                 
+
+                                </div><!-- /col -->
             </div><!-- /row -->
         </div><!-- /container -->
     </section>
     <!-- END / ICON BOX -->
 
     <!-- PORTFOLIO 1 -->
-    <section class="section bg-parallax pt-60 pb-60" data-background="img/bg/portfolio.jpg">
-        <div class="bg-overlay-black bg-overlay-7"></div>
-        <div class="container">
-            <h2 class="section-header big" data-section-center="991">Our Work</h2>
-            <!-- FILTER -->
-            <ul class="portfolio-selector filters" data-portfolio-type="991">
-                <li><a href="#" data-filter="*">All</a></li>
-                <li><a href="#" data-filter=".office">Office</a></li>
-                <li><a href="#" data-filter=".building">Building</a></li>
-                <li><a href="#" data-filter=".museum">Museum</a></li>
-                <li><a href="#" data-filter=".urban">Urban</a></li>
-                <li><a href="#" data-filter=".house">House</a></li>
-            </ul><!-- /portfolio-selector -->
-            <!-- END / FILTER -->
-
-            <div class="isotope-grid-wrapper" data-isotope-column="4" data-column-gap="30" data-column-md="3" data-column-sm="2" data-column-xs="1" data-column-tn="1">
-                <div class="isotope-grid-row">
-                    <div class="isotope-grid">
-                        <div class="grid-sizer"></div>
-                        <!-- <div class="gutter-sizer"></div> -->
-
-                        <div class="portfolio-item office">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/1big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Building Engineering</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item building">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/2big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Building Engineering</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item museum">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/3big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Architecture</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item building">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/4big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Construction Services</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item urban">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/5big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Building Engineering</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item museum">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/6big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Architecture</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item urban">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/7big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Construction Services</a></h5>
-                        </div><!-- /portfolio-item -->
-
-                        <div class="portfolio-item house">
-                            <div class="portfolio-media hover-link">
-                                <img src="../../img/portfolio/8big.jpg" alt="" />
-                                <a href="work-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                            </div><!-- /hover-link -->
-                            <h5 class="text-uppercase text-center"><a href="work-single.html">Building Engineering</a></h5>
-                        </div><!-- /portfolio-item -->
-                    </div><!-- /isotope-grid -->
-                </div><!-- /isotope-grid-row -->
-            </div><!-- /isotope-grid-wrapper -->
-        </div><!-- /container -->
-    </section>
+    
     <!-- END / PORTFOLIO 1 -->
 
     <!-- COUNTER 1 -->
-    <section class="section bg-white bd-b pb-50">
+    <section class="section bg-parallax1" style = "padding:40px 0px" data-background="../../img/bg/demo1.jpg">
+        <div class="bg-overlay-black bg-overlay-7"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+             <h1 class="section-header" data-section-center="767">Datos de nuestros lideres</h1>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="counter">
+                        <p class="count-number">60</p>
+                        <h3>Proyectos Ejecutados</h3>
+                    </div><!-- /counter -->
+                </div><!-- /col -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="counter">
+                        <p class="count-number">30</p>
+                        <h3>Clientes Satisfechos</h3>
+                    </div><!-- /counter -->
+                </div><!-- /col -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="counter">
                         <p class="count-number">3468</p>
-                        <h3>Projects Finished</h3>
+                        <h3>Horas en Proyectos</h3>
                     </div><!-- /counter -->
                 </div><!-- /col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="counter">
-                        <p class="count-number">4638</p>
-                        <h3>Happy Clients</h3>
-                    </div><!-- /counter -->
-                </div><!-- /col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="counter">
-                        <p class="count-number">3468</p>
-                        <h3>Hours of work</h3>
-                    </div><!-- /counter -->
-                </div><!-- /col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="counter">
-                        <p class="count-number">3468</p>
-                        <h3>Cup of coffee</h3>
-                    </div><!-- /counter -->
-                </div><!-- /col -->
+
             </div><!-- /row -->
         </div><!-- /container -->
         <div class="stat-trigger"></div>
@@ -603,116 +471,45 @@
     <!-- END / COUNTER 1 -->
 
     <!-- NEWS -->
-    <section class="section bg-gray bd-b pt-60 pb-20">
-        <div class="container">
-            <h2 class="section-header">Company News</h2>
-            <div class="row">
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <article class="post post-style-2">
-                        <div class="post-thumbnail hover-link">
-                            <img src="../../img/post/1.jpg" alt="" />
-                            <a href="news-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!--/ post-thumbnail -->
-
-                        <header class="entry-header">
-                            <h2 class="entry-title h5" data-number-line="2"><a href="news-single.html">Finding new buildings in the dust</a></h2>
-                        </header>
-
-                        <div class="entry-content">
-                            <p data-number-line="4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, </p>
-                        </div><!-- /entry-content -->
-
-                        <footer class="entry-footer">
-                            <span class="posted-on"><i class="fa fa-calendar"></i><a href="#">December 18, 2015</a></span>
-                            <span class="comments-link"><i class="fa fa-comments-o"></i><a href="#">No comment</a></span>
-                        </footer>
-                    </article><!-- /post -->
-                </div><!-- /col -->
-
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <article class="post post-style-2">
-                        <div class="post-thumbnail hover-link">
-                            <img src="../../img/post/2.jpg" alt="" />
-                            <a href="news-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!--/ post-thumbnail -->
-
-                        <header class="entry-header">
-                            <h2 class="entry-title h5" data-number-line="2"><a href="news-single.html">Construction honored with agc builders</a></h2>
-                        </header>
-
-                        <div class="entry-content">
-                            <p data-number-line="4">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
-                        </div><!-- /entry-content -->
-
-                        <footer class="entry-footer">
-                            <span class="posted-on"><i class="fa fa-calendar"></i><a href="#">December 18, 2015</a></span>
-                            <span class="comments-link"><i class="fa fa-comments-o"></i><a href="#">No comment</a></span>
-                        </footer>
-                    </article><!-- /post -->
-                </div><!-- /col -->
-
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <article class="post post-style-2">
-                        <div class="post-thumbnail hover-link">
-                            <img src="../../img/post/3.jpg" alt="" />
-                            <a href="news-single.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!--/ post-thumbnail -->
-
-                        <header class="entry-header">
-                            <h2 class="entry-title h5" data-number-line="2"><a href="news-single.html">Populous' Spurs stadium approved</a></h2>
-                        </header>
-
-                        <div class="entry-content">
-                            <p data-number-line="4">Consectetuer adipiscing elit, sed diam nonummy nibh euismod, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam, ipsum dolor sit amet, consectetuer adipiscing elit</p>
-                        </div><!-- /entry-content -->
-
-                        <footer class="entry-footer">
-                            <span class="posted-on"><i class="fa fa-calendar"></i><a href="#">December 18, 2015</a></span>
-                            <span class="comments-link"><i class="fa fa-comments-o"></i><a href="#">No comment</a></span>
-                        </footer>
-                    </article><!-- /post -->
-                </div><!-- /col -->
-            </div><!-- /row -->
-        </div><!-- /container -->
-    </section>
+   
     <!-- END / NEWS -->
 
     <!-- OUR LEADERS -->
     <section class="section bg-white pt-60 pb-60">
         <div class="container">
-            <h2 class="section-header" data-section-center="767">Our Leaders</h2>
+            <h2 class="section-header" data-section-center="767">Nuestros Lideres</h2>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="team-leader">
                         <div class="avatar hover-link">
                             <img src="../../img/team/1.jpg" alt="" />
                             <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
                         </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">John Doe</h4>
-                        <h5>Ceo / Co-Founder</h5>
-                        <p class="mb-20" data-number-line="5">Sed diam nonummy nibh euismod tincidunt, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+                        <h4 class="h5 text-uppercase">Joaquín Muñoz</h4>
+                        <h5>Gerente / Co-Fundador</h5>
+                        <p class="mb-20" data-number-line="5">Ingeniero en instrumentación y control, especialista en gerencia de proyectos, Magister en Administración (MBA).</p>
                         <ul class="social-list black">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon icon-flickr"></i></a></li>
+                       
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div><!-- /team-leader -->
                 </div><!-- /col -->
 
-                <div class="col-md-3 col-sm-6 col-xs-12 team">
+                <div class="col-md-4 col-sm-6 col-xs-12 team">
                     <div class="team-leader">
                         <div class="avatar hover-link">
                             <img src="../../img/team/2.jpg" alt="" />
                             <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
                         </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">John Doe</h4>
-                        <h5>Ceo / Co-Founder</h5>
-                        <p class="mb-20" data-number-line="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt, consectetuer adipiscing elit</p>
-                        <ul class="social-list black">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <h4 class="h5 text-uppercase"> Carlos Hurtado</h4>
+                        <h5>Director Comercial / Co-Fundador</h5>
+                        <p class="mb-20" data-number-line="5">Carlos Hurtado, Ingeniero en instrumentación y control, especialista en gerencia de proyectos.</p>
+                        <ul class="social-list black"><br>
+                  
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon icon-flickr"></i></a></li>
+                    
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div><!-- /team-leader -->
@@ -720,68 +517,28 @@
 
                 <div class="clearfix visible-sm"></div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12 team">
+                <div class="col-md-4 col-sm-6 col-xs-12 team">
                     <div class="team-leader">
                         <div class="avatar hover-link">
                             <img src="../../img/team/3.jpg" alt="" />
                             <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
                         </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">John Doe</h4>
-                        <h5>Ceo / Co-Founder</h5>
-                        <p class="mb-20" data-number-line="5">Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt lorem ipsum dolor sit amet, lorem ipsum dolor sit amet.</p>
+                        <h4 class="h5 text-uppercase">Cesar Jiménez</h4>
+                        <h5>Director de Proyectos / Co-Fundador</h5>
+                        <p class="mb-20" data-number-line="5"> Ingeniero electricista, especialista en gerencia de proyectos. </p><br>
                         <ul class="social-list black">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon icon-flickr"></i></a></li>
+                       
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div><!-- /team-leader -->
                 </div><!-- /col -->
 
-                <div class="col-md-3 col-sm-6 col-xs-12 team">
-                    <div class="team-leader">
-                        <div class="avatar hover-link">
-                            <img src="../../img/team/4.jpg" alt="" />
-                            <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">John Doe</h4>
-                        <h5>Ceo / Co-Founder</h5>
-                        <p class="mb-20" data-number-line="5">Adipiscing elit, sed diam nonummy nibh euismod consectetuer tincidunt lorem ipsum dolor sit amet, dolor sit amet nonummy nibh </p>
-                        <ul class="social-list black">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon icon-flickr"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div><!-- /team-leader -->
-                </div><!-- /col -->
+
             </div><!-- /row -->
 
-            <div class="divider"></div>
-
-            <div class="client-slider">
-                <div class="client-logo">
-                    <img src="../../img/client/1.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/2.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/3.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/4.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/5.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/6.png" alt="" />
-                </div><!-- /client-logo -->
-                <div class="client-logo">
-                    <img src="../../img/client/4.png" alt="" />
-                </div><!-- /client-logo -->
-            </div><!-- /client-slider -->
+        
         </div><!-- /container -->
     </section>
     <!-- END / OUR LEADERS -->
@@ -791,11 +548,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-12 col-xs-12">
-                    <h3 class="play-font fsi mb-0 text-center text-left-md" style="line-height: 2.3em;">What does innovation mean to you? click here to see what it means to us.</h3>
+                    <h3 class="play-font fsi mb-0 text-center text-left-md" style="line-height: 2.3em;color:white">Nosotros somos mas que constructores - nosotros somos parters</h3>
                 </div><!-- /col -->
 
                 <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div class="text-center text-right-md"><button type="button" class="btn btn-black">Get a quote</button></div>
+                    <div class="text-center text-right-md"><button type="button" class="btn btn-black">Soliciar Cotización</div>
                 </div><!-- /col -->
             </div><!-- /row -->
         </div><!-- /container -->
@@ -810,7 +567,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <aside class="widget widget_about">
                             <div class="logo">
-                                <a href="index.html"><img src="../../img/logo_white_txt.png" alt="logo" /></a>
+                                <a href="index.html"><img src="../../img/logo1.png" alt="logo" /></a>
                             </div><!-- /#logo -->
                             <p>Ingeniería y Proyectos Sigma S.A.S. es una empresa de Ingeniería, montaje y consultoría en las áreas eléctrica, instrumentación industrial, control y telecomunicaciones.</p>
                             <ul class="social-list">

@@ -651,16 +651,11 @@ iframe {
   border-bottom: none !important;
 }
 
-html .bg-parallax {
-  background-attachment: fixed !important;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
+html .bg-parallax1 {
+ 
 }
 
-html .bg-parallax h1, html .bg-parallax h2, html .bg-parallax h3, html .bg-parallax h4, html .bg-parallax h5, html .bg-parallax h6 {
+html .bg-parallax1 h1, html .bg-parallax1 h2, html .bg-parallax1 h3, html .bg-parallax1 h4, html .bg-parallax1 h5, html .bg-parallax1 h6 {
   color: #fff;
 }
 
@@ -756,7 +751,7 @@ html .bg-color {
 }
 
 .bg-overlay-5:before {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .bg-overlay-6:before {
@@ -2787,7 +2782,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 .header .main-header {
     position: relative;
     background: rgba(12, 12, 12, 0.74);
-    padding: 40px 0 10px 0;
+    padding: 20px 0 10px 0;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
@@ -2952,10 +2947,12 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 
 .header .main-header.main-header-5 + .navBar5 .navigation ul > li > a {
   color: #444;
+
 }
 
 .header .main-header.main-header-5 + .navBar5 .navigation ul > li.menu-item-has-children a span.fa {
   color: #5e9bbb;
+
 }
 
 .header .main-header.main-header-5 + .navBar5 .navigation ul > li.menu-item-has-children > ul.sub-menu {
@@ -3280,6 +3277,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 
 .navigation ul > li.menu-item-has-children a {
   padding-right: 5px;
+      margin-top: 25px;
 }
 
 .navigation ul > li.menu-item-has-children > ul.sub-menu {
@@ -3511,6 +3509,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
   height: 30px;
   text-align: center;
   cursor: pointer;
+  display: none;
 }
 
 .search-btn span.fa,
@@ -3699,8 +3698,8 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 
 #sub-header .sub-wrapper {
   position: relative;
-     padding-top: 50px;
-    padding-bottom: 60px;
+     padding-top: 80px;
+    padding-bottom: 70px;
 }
 
 @media screen and (max-width: 767px) {
@@ -3709,19 +3708,19 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
   }
 }
 
-.bg-parallax .sub-wrapper {
+.bg-parallax1 .sub-wrapper {
   position: relative;
   padding: 100px 0;
 }
 
-.bg-parallax .sub-wrapper h1 {
-font-size: 35px;
+.bg-parallax1 .sub-wrapper h1 {
+  font-size: 34px;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.bg-parallax .sub-wrapper h2 {
+.bg-parallax1 .sub-wrapper h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
   letter-spacing: 1px;
@@ -3918,7 +3917,7 @@ font-size: 35px;
   letter-spacing: 1px;
 }
 
-.bg-parallax .counter p.count-number {
+.bg-parallax1 .counter p.count-number {
   color: #fff;
 }
 
@@ -4414,11 +4413,11 @@ font-size: 35px;
   }
 }
 
-.bg-parallax .portfolio-selector li a {
+.bg-parallax1 .portfolio-selector li a {
   color: #fff;
 }
 
-.bg-parallax .portfolio-selector li a:hover {
+.bg-parallax1 .portfolio-selector li a:hover {
   color: #5e9bbb;
 }
 

@@ -13,4 +13,8 @@ class HomeController < ApplicationController
   def servicio
     @servicio = Service.find(params[:id])
   end
+
+  def nosotros
+    
+  end
 end

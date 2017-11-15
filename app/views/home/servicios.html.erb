@@ -1,4 +1,4 @@
- <section id="sub-header" class="section bg-parallax pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+ <section id="sub-header" class="section bg-parallax1 pt-0 pb-0" style="background-image: url('../../img/bg/demo1.jpg');" >
         <div class="bg-overlay-black bg-overlay-5"></div>
         <div class="container">
             <div class="sub-wrapper">
@@ -38,7 +38,7 @@
                             <div class="mb-30 service-desc">
                                 <p><%== service.description%></p>
                             </div>
-                               <a href="service-single.html" class="btn btn-primary radius mb-30">Ver mas</a>
+                                <%= link_to "Ver mas", servicio_path(service) ,class: "btn btn-primary radius mb-30",  data: { turbolinks: false } %>
                         </div>
 
 
