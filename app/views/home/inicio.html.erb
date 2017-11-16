@@ -51,17 +51,12 @@
                     <li class="menu-item-has-children">
                         <a href="#">
                             Experiencia
-                            <span class="fa fa-angle-down"></span>
+                          
                         </a>
-                        <ul class="sub-menu">
-                            <li><a href="work4col.html">Work 4 Column</a></li>
-                            <li><a href="work4col-nospace.html">Work 4 Column Nospace</a></li>
-                            <li><a href="work3col.html">Work 3 Column</a></li>
-                            <li><a href="work3col-nospace.html">Work 3 Column Nospace</a></li>
-                        </ul>
+                       
                     </li>
                   
-                    <li><a href="news.html">Noticias</a></li>
+                    <li><a href="news.html">Blog Sigmaip</a></li>
                     <li><a href="contact.html">Contactanos</a></li>
                     <li><%=link_to "Administrar", services_path%></li>
 
@@ -331,7 +326,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-xs-12">
-                    <h2 class="section-header big">Nosotros</h2>
+                    <h2 class="section-header big">Nuestra Empresa</h2>
                     <p>Ingeniería y Proyectos Sigma S.A.S. es una empresa de Ingeniería, montaje y consultoría en las áreas eléctrica, instrumentación industrial, control y telecomunicaciones, la cual desarrolla sus trabajos bajo metodologías eficientes que generan valor en la planeación, ejecución, seguimiento y cierre de proyectos, con amplia experiencia en el sector industrial. El mayor interés de ingeniería y proyectos Sigma S.A.S. es ofrecer un servicio integral, dinámico y responsable el cual este orientado a la satisfacción de los objetivos de nuestros clientes y aliados. </p>
 
                     <div class="divider pt-30 pb-40"></div>
@@ -382,7 +377,7 @@
                         <main id="main">
           
 
-                            <div class="divider pt-20"></div>
+                          
 
                             <div class="row">
 
@@ -477,25 +472,30 @@
     <!-- OUR LEADERS -->
     <section class="section bg-white pt-60 pb-60">
         <div class="container">
-            <h2 class="section-header" data-section-center="767">Nuestros Lideres</h2>
+            <h2 class="section-header" data-section-center="767">Nuestros Equipo</h2>
             <div class="row">
+
+                <%@team.each do |team|%>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="team-leader">
                         <div class="avatar hover-link">
-                            <img src="../../img/team/1.jpg" alt="" />
+                            <%= image_tag team.image_url if team.image_url%>
+                          
                             <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
                         </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">Joaquín Muñoz</h4>
-                        <h5>Gerente / Co-Fundador</h5>
-                        <p class="mb-20" data-number-line="5">Ingeniero en instrumentación y control, especialista en gerencia de proyectos, Magister en Administración (MBA).</p>
+                        <h4 class="h5 text-uppercase"><%=team.name%></h4>
+                        <h5><%=team.position%></h5>
+                        <p class="mb-20" data-number-line="5"><%=team.description%></p>
                         <ul class="social-list black">
                     
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="<%=team.twitter%>"><i class="fa fa-twitter"></i></a></li>
                        
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="<%=team.twitter%>"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div><!-- /team-leader -->
                 </div><!-- /col -->
+
+                <%end%>
 
                 <div class="col-md-4 col-sm-6 col-xs-12 team">
                     <div class="team-leader">

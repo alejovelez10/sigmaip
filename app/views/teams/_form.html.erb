@@ -1,0 +1,101 @@
+<div class="row">
+<div class="col-md-12" style="padding-top: 10px;">
+<%= form_with(model: team, local: true) do |form| %>
+  <% if team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+      <% team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+    <%= form.label "Nombre" %>
+ <%= form.text_field :name, id: :team_name, class: "form form-control" %>
+  </div>
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
+    <%= form.label "Descripcion" %>
+ <%= form.text_area :description, id: :team_name, class: "form form-control" %>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="row">
+  <div class="col-md-2">
+  <div class="form-group">
+   <%= form.label "Orden"%>
+    <%= form.text_field :order, id: :team_order , class: "form form-control"%>
+  </div></div>
+    <div class="col-md-6">
+  <div class="form-group">
+   <%= form.label "Cargo"%>
+    <%= form.text_field :position, id: :team_position , class: "form form-control"%>
+  </div></div>
+<div class="col-md-4">
+  <div class="form-group">
+  <%= form.label :image %>
+    <%= form.file_field :image, id: :team_image, class: "form form-control" %>
+  </div>
+  </div>
+
+  
+  </div>
+
+
+
+
+
+  <div class="row">
+<div class="col-md-6">
+  <div class="form-group">
+   <%= form.label :linkedin %>
+    <%= form.text_field :linkedin, id: :team_linkedin, class: "form form-control" %>
+  </div>
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
+   <%= form.label :twitter %>
+    <%= form.text_field :twitter, id: :team_twitter, class: "form form-control" %>
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+<div class="col-md-8">
+  <div class="form-group">
+   <%= form.label "Experiencia" %>
+    <%= form.text_area :experience, id: :team_lexperience, class: "ckeditor" %>
+  </div>
+  </div>
+
+  </div>
+
+
+
+
+<%form.hidden_field :user_id, :value => current_user.id %>
+
+
+<div class="row" style="margin-top:50px;">
+
+  
+
+<div class="col-lg-12">
+  <div class="actions">
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+   </div>  </div>
+<% end %>
+
+
+  </div>
+  </div>

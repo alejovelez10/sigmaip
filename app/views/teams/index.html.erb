@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+<div class="col-md-8">
+  <h1>Servicios</h1>
+</div>
+<div class="col-md-4 text-right">
+  <%= link_to 'Nuevo Integrante', new_team_path,:"data-turbolinks" => false, class: "btn btn-primary" %>
+
+</div>
+  
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Experiencia</th>
+      <th>Imagen</th>
+
+      <th>Linkedin</th>
+      <th>Twitter</th>
+      <th>Cargo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.description %></td>
+        <td><%= team.experience %></td>
+        <td><%= team.image %></td>
+        <td><%= team.user_id %></td>
+        <td><%= team.linkedin %></td>
+        <td><%= team.twitter %></td>
+        <td><%= team.position %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>

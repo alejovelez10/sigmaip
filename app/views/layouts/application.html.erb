@@ -29,6 +29,8 @@ font-family: 'Rajdhani', sans-serif;
 <div class="container">
 <%if user_signed_in? %>
 <%= link_to "Servicios" ,services_path %>
+<%= link_to "Team" ,teams_path %>
+
 <%end %>
     <%= yield %>
     </div>
