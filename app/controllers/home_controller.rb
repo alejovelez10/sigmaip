@@ -16,6 +16,6 @@ class HomeController < ApplicationController
   end
 
   def nosotros
-    
+     @team = Team.all.order(order: :asc)
   end
 end

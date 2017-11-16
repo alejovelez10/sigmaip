@@ -120,65 +120,34 @@
                     </div><!-- /site-content -->
                 </div><!-- /col -->
                             </div><!-- /row -->
- <section class="section bg-white pt-60 pb-60">
+    <section class="section bg-white pt-60 pb-60">
         <div class="container">
-            <h2 class="section-header" data-section-center="767">Nuestros Equipo</h2>
+            <h2 class="section-header" data-section-center="767">Nuestro Equipo</h2>
             <div class="row">
+
+                <%@team.each do |team|%>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="team-leader">
                         <div class="avatar hover-link">
-                            <img src="../../img/team/1.jpg" alt="" />
+                            <%= image_tag team.image_url if team.image_url%>
+                          
                             <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
                         </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">Joaquín Muñoz</h4>
-                        <h5>Gerente / Co-Fundador</h5>
-                        <p class="mb-20" data-number-line="5">Ingeniero en instrumentación y control, especialista en gerencia de proyectos, Magister en Administración (MBA).</p>
+                        <h4 class="h5 text-uppercase"><%=team.name%></h4>
+                        <h5><%=team.position%></h5>
+                        <p class="mb-20" data-number-line="5"><%=team.description%></p>
                         <ul class="social-list black">
-                    
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li><a href="<%=team.linkedin%>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="<%=team.twitter%>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                           
                        
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            
                         </ul>
                     </div><!-- /team-leader -->
                 </div><!-- /col -->
 
-                <div class="col-md-4 col-sm-6 col-xs-12 team">
-                    <div class="team-leader">
-                        <div class="avatar hover-link">
-                            <img src="../../img/team/2.jpg" alt="" />
-                            <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase"> Carlos Hurtado</h4>
-                        <h5>Director Comercial / Co-Fundador</h5>
-                        <p class="mb-20" data-number-line="5">Carlos Hurtado, Ingeniero en instrumentación y control, especialista en gerencia de proyectos.</p>
-                        <ul class="social-list black"><br>
-                  
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div><!-- /team-leader -->
-                </div><!-- /col -->
+                <%end%>
 
-                <div class="clearfix visible-sm"></div>
-
-                <div class="col-md-4 col-sm-6 col-xs-12 team">
-                    <div class="team-leader">
-                        <div class="avatar hover-link">
-                            <img src="../../img/team/3.jpg" alt="" />
-                            <a href="our-leaders.html" class="overlay"><i class="fa fa-link"></i></a>
-                        </div><!-- /avatar -->
-                        <h4 class="h5 text-uppercase">Cesar Jiménez</h4>
-                        <h5>Director de Proyectos / Co-Fundador</h5>
-                        <p class="mb-20" data-number-line="5"> Ingeniero electricista, especialista en gerencia de proyectos. </p><br>
-                        <ul class="social-list black">
-               
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                       
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div><!-- /team-leader -->
-                </div><!-- /col -->
 
 
             </div><!-- /row -->
