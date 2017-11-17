@@ -25,14 +25,14 @@
                         <main id="main">
                            
                                 <div class="alert alert-success" style="margin-top:5px;display:none">
-                Tu pqrs se envío con exito.
+                Tu solicitud se envío con exito.
             </div>     
                                  <%=form_tag create_trabajo_path, method: :post ,remote:true, :multipart => true do %>
                                   <label for="">Nivel de Estudios</label><br>
                                     
                                   <p ><%= radio_button_tag :level, "Bachiller" %> Bachiller</p>
                                    <p ><%= radio_button_tag :level, "Tecnico", :checked => 'true' %> Tecnico</p>
-                                    <p ><%= radio_button_tag :level, "Tecnologo" %> Tecnolog</p>
+                                    <p ><%= radio_button_tag :level, "Tecnologo" %> Tecnologo</p>
                                     <p ><%= radio_button_tag :level, "Profesional" %> Profesional</p>
                                     <p ><%= radio_button_tag :level, "Especialista" %> Especialista</p>
                                    <br><br>

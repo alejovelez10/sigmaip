@@ -1,6 +1,8 @@
 <% if @contacto.errors.blank? %>
-    $('input').val("");
-     $('textarea').val("");
+ $('form input:text').val("");
+ $('form input:file').val("");
+
+ $('form textarea').val("");
         
        
  $('.alert-success').fadeIn();
