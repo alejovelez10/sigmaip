@@ -1,0 +1,82 @@
+<section id="sub-header" class="section bg-parallax1 pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Contactenos</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Contactenos", contactenos_path,  data: { turbolinks: false }%></li>
+                    
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+<section class="section bg-white pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                            <p> </p>
+
+                            <br />
+                                <div class="alert alert-success" style="margin-top:5px;display:none">
+                Tu pregunsta se envío con exito.
+            </div>     
+                                 <%=form_tag create_contacto_path, method: :post, remote:true do %>
+                                 <div class="group clearfix">
+                                         <div class="group-item mb-30">
+                                 <%= text_field_tag :name, nil,placeholder: "Nombre" %>
+                                          </div>
+                                          <div class="group-item mb-30">
+                                 <%= text_field_tag :subject, nil, placeholder: "Asunto" %>
+                                   </div>
+                                          </div>
+                                    <div class="group clearfix">
+                                    <div class="group-item mb-30">
+                                 <%= email_field_tag :email, nil, placeholder: "Email" %>
+                                 </div>
+                                  <div class="group-item mb-30">
+                                 <%= text_field_tag :company, nil, placeholder: "Empresa" %>
+                                 </div>
+                                 </div>
+                                 <%= text_area_tag :message,nil, placeholder: "Mensaje", class: "mb-30" %>
+
+                                 <%= submit_tag "Enviar Mensaje", class: "btn btn-primary radius"%>
+                                 <div id="contact-content" style="padding-top: 20px"></div>
+                            <%end%>           
+
+                          
+                        </main>
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div id="sidebar" class="sidebar">
+                        <div id="widget-area">
+                           <aside class="widget widget_contact">
+                                <ul>
+                                    <li><i class="fa fa-map-marker"></i>Dir. CR 33 # 28-10 INT 313</li>
+                                    <li><i class="icon icon-phone"></i>+574 2985861</li>
+                                    <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                    <li><i class="fa fa-envelope-o"></i>churtado@sigmaip.co</li>
+                                </ul>
+                            </aside><!-- /widget_contact -->
+                            <aside class="widget widget_text">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.0079756387813!2d-75.56216738273028!3d6.225672583645999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44283869366b15%3A0xd847c2906ae3dd6a!2sSerrania+De+San+Diego!5e0!3m2!1ses!2sco!4v1510896870300" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </aside><!-- /widget_text -->
+
+                         
+                        </div><!-- /widget-area -->
+                    </div><!-- /sidebar -->
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>
+

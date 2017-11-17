@@ -1,0 +1,94 @@
+<section id="sub-header" class="section bg-parallax1 pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Peticiones, Quejas, Reclamos y Solicitudes</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "pqrs", pqrf_path,  data: { turbolinks: false }%></li>
+                    
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+<section class="section bg-white pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                           
+                                <div class="alert alert-success" style="margin-top:5px;display:none">
+                Tu pqrs se envío con exito.
+            </div>     
+                                 <%=form_tag create_pqrf_path, method: :post, remote:true do %>
+
+                                  <p ><%= radio_button_tag :typep, "Peticion", :checked => 'true' %> Peticion</p>
+                                   <p ><%= radio_button_tag :typep, "Queja" %> Queja</p>
+                                    <p ><%= radio_button_tag :typep, "Reclamo" %> Reclamo</p>
+                                    <p ><%= radio_button_tag :typep, "Solicitud" %> Solicitud</p>
+                                   <br><br>
+                                 <div class="group clearfix">
+                                         <div class="group-item mb-30">
+                                 <%= text_field_tag :name, nil,placeholder: "Nombre" %>
+                                          </div>
+                                          <div class="group-item mb-30">
+                                   <%= text_field_tag :company, nil, placeholder: "Empresa" %>
+                                          </div></div>
+                                         <%= email_field_tag :email, nil, placeholder: "Email", class: "mb-30" %>
+                                   
+                                         
+                                
+                                 <%= text_area_tag :message,nil, placeholder: "Mensaje", class: "mb-30" %>
+
+                                 <%= submit_tag "Enviar Mensaje", class: "btn btn-primary radius"%>
+                                 <div id="contact-content" style="padding-top: 20px"></div>
+                            <%end%>           
+
+                          
+                        </main>
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div id="sidebar" class="sidebar">
+                        <div id="widget-area">
+                           <aside class="widget widget_contact">
+                           <p><img style ="width: 100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9tBkI1h-2Wp73XAZrJKvNI_rnqQh6drJTEc0rfkRc-SRa1aFpQ" alt=""></p>
+                           <p><strong>PETICIÓN:</strong> Es una actuación por medio de la cual el cliente, de manera respetuosa, solicita a la empresa cualquier información relacionada con la prestación del servicio.  </p>
+                           <p><strong>QUEJA: </strong>Es la expresión o manifestación que le hace el cliente a la empresa por la inconformidad que le generó la prestación de nuestros servicios.  </p>
+                              <p>
+                              <p><strong>RECLAMO:</strong> Es la oposición o contrariedad presentada por el cliente, con el objeto de que la empresa revise y evalúe una actuación relacionada con la prestación del servicio en términos económicos.
+
+                              </p> <p>
+                                  <strong>SUGERENCIA:</strong> Es una propuesta presentada por un cliente para incidir en el mejoramiento de un proceso de la empresa cuyo objeto está relacionado con la prestación del servicio.  </p>
+
+
+
+                            </aside><!-- /widget_contact -->
+                          
+                         
+                        </div><!-- /widget-area -->
+                    </div><!-- /sidebar -->
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>
+
+<style>
+form p
+{
+    display: inline-block;
+    margin-left: 10px;
+}
+strong
+{
+    color:#5e9bbb;
+}
+</style>

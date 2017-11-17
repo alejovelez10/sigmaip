@@ -1,0 +1,86 @@
+ <section id="sub-header" class="section bg-parallax1 pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Nuestro Equipo</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Nuestro Equipo", servicios_path,  data: { turbolinks: false }%></li>
+                      <li> <%= @equipo.name%></li>
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+    <!-- END / SUB HEADER -->
+
+    <!-- CONTENT -->
+    <section class="section bg-white pt-70 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5  col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                           
+                            <div class="mb-20">
+                                
+                                <%= (image_tag @equipo.image_url, style: "width:300px") if @equipo.image_url %>
+                               
+                               
+                            </div><!-- /work-slider -->
+
+                               </main>
+              </div><!-- /col -->
+               </div><!-- /col -->
+               <div class="col-md-7  col-sm-12 col-xs-12">
+                            
+                            <div class="page-grid">
+                                <!-- GRID 9 COLUMNS -->
+                                <div class="page-content col-12">
+                                    <h2 class="section-header"><%==@equipo.name%></h2>
+                                    <p style="margin-bottom: 0px">Cargo</p>
+                                    <%=@equipo.position%>
+                                    <br><br>
+                                    <p style="margin-bottom: 0px">Perfil</p>
+                                    <%==@equipo.description%><br><br>
+                                     <ul class="social-list black">
+                         <li><a href="<%=@equipo.linkedin%>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="<%=@equipo.twitter%>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                           
+                       
+                            
+                        </ul>
+                                </div><!-- /page-content -->
+
+            
+                            </div><!-- /page-grid -->
+
+                            
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+                       
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                <div class="divider pt-20"></div>
+                                     <h2 class="section-header">Experiencia</h2>
+                                   <p><%==@equipo.experience%></p>
+                                    
+                                </div><!-- /col -->
+                            </div><!-- /row -->
+
+                        
+                     
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>

@@ -89,11 +89,11 @@
         <div class="container">
             <div class="top-left">
                 <ul class="social-header">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/search/top/?q=sigma%20ingenieria%20y%20proyectos" target="_blank" ><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-wordpress"></i></a></li>
+                  
                
                 </ul><!-- /social-header -->
             </div><!-- /top-left -->
@@ -101,7 +101,8 @@
                 <ul class="info-header">
                     
                     <li><i class="icon icon-phone"></i>(547) 45678910</li>
-                    <li><i class="icon icon-clock"></i>Lunes - Viernes: 7:00 - 06:00</li>
+                     <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                <li><i class="fa fa-envelope-o"></i><a href="#">churtado@sigmaip.co</a></li>
                 </ul><!-- /info-header -->
             </div><!-- /top-right -->
         </div><!-- /container -->
@@ -128,43 +129,28 @@
             <!-- NAVIGATION -->
             <nav class="navigation nav3" data-menu-type="1199">
                 <ul class="nav text-uppercase">
-                    <li class="menu-item-has-children">
-                        <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%>
-                        
-                            
-                      
-                        
+                 <li class="menu-item-has-children">
+                       <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%>
                     </li>
-                   
+      
                     <li class="menu-item-has-children">
-                        <%= link_to "Quienes Somos", inicio_path,  data: { turbolinks: false }%>
+                        <%= link_to "Quiénes Somos", nosotros_path,  data: { turbolinks: false }%>
                     </li>
-                  <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
                     <li class="menu-item-has-children">
                         <a href="#">
-                            Our work
-                            <span class="fa fa-angle-down"></span>
+                            Experiencia
+                          
                         </a>
-                        <ul class="sub-menu">
-                            <li><a href="work4col.html">Work 4 Column</a></li>
-                            <li><a href="work4col-nospace.html">Work 4 Column Nospace</a></li>
-                            <li><a href="work3col.html">Work 3 Column</a></li>
-                            <li><a href="work3col-nospace.html">Work 3 Column Nospace</a></li>
-                        </ul>
+                       
                     </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">
-                            Shop
-                            <span class="fa fa-angle-down"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="shop-left.html">Shop Sidebar Left</a></li>
-                            <li><a href="shop-right.html">Shop Sidebar Right</a></li>
-                            <li><a href="shop-fullwidth.html">Shop Fullwidth</a></li>
-                        </ul>
+                  
+                    <li><%=link_to "Noticias", contactenos_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Concactenos", contactenos_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "pqrs", pqrf_path,  data: { turbolinks: false }%></li>
+
                     </li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
+           
                 </ul><!-- /nav -->
             </nav>
             <!-- END / NAVIGATION -->
@@ -183,20 +169,7 @@
     <!-- END / CONTENT -->
 
     <!-- FOOTER -->
-        <section class="section bg-primary pt-20 pb-20">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12">
-                    <h3 class="play-font fsi mb-0 text-center text-left-md" style="line-height: 2.3em;color:white">Nosotros somos mas que constructores - nosotros somos parters</h3>
-                </div><!-- /col -->
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div class="text-center text-right-md"><button type="button" class="btn btn-black">Soliciar Cotización</div>
-                </div><!-- /col -->
-            </div><!-- /row -->
-        </div><!-- /container -->
-    </section>
- <footer id="footer" class="footer bg-dark">
+    <footer id="footer" class="footer bg-dark">
         <div class="foot-widget">
             <div class="container">
                 <div class="row">
@@ -217,13 +190,20 @@
 
                     <div class="col-md-3 col-md-push-6 col-sm-6 col-xs-12">
                         <aside class="widget widget_subscribe">
+                             <div class="alert alert-success" style="margin-top:5px;display:none">
+                Gracias por suscribirte.
+            </div>     
                             <h3 class="widget-title h4">Contactanos</h3>
+
+                            <%=form_tag create_contacto_path, method: :post, remote: true do %>
+                                 <%= text_field_tag :name, nil,placeholder: "Nombre", class: "black mb-30" %>
+                                 <%= email_field_tag :email, nil, placeholder: "Email", class: "black mb-30" %>
+                                 <%= text_field_tag :company, nil, placeholder: "Empresa", class: "black mb-30" %>
+                                 <%= hidden_field_tag :subject, "suscripcion" %>
+                                 <%= submit_tag "Enviar Mensaje", class: "btn btn-primary"%>
+                            <%end%>
                           
-                            <form action="subscribe" method="post">
-                                <input type="text" name="name" value="" placeholder="Name" class="black mb-30">
-                                <input type="email" name="email" value="" placeholder="Email" class="black mb-30">
-                                <button type="submit" class="btn btn-primary">Send message</button>
-                            </form>
+                    
                         </aside><!-- /widget_subscribe -->
                     </div><!-- /col -->
 
@@ -235,8 +215,9 @@
                             <ul>
                                 <li><i class="fa fa-map-marker"></i>Dir. CR 33 # 28-10 INT 313</li>
                                 <li><i class="icon icon-phone"></i>+574 2985861</li>
-                                <li><i class="icon icon-paper-plane"></i><a href="#">churtado@sigmaip.co</a></li>
-                                <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                 <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                <li><i class="fa fa-envelope-o"></i><a href="#">churtado@sigmaip.co</a></li>
+                               
                                 
                             </ul>
                         </aside><!-- /widget_contact -->
@@ -261,11 +242,9 @@
         <div class="foot-credit">
             <div class="container">
                 <ul>
-                    <li><%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
-                    <li><%= link_to "Quienes Somos", inicio_path,  data: { turbolinks: false }%></li>
-                    <li><%= link_to "Servicios", inicio_path,  data: { turbolinks: false }%></li>
-                    <li><%= link_to "Blog Sigmaip", inicio_path,  data: { turbolinks: false }%></li>
-                    <li><%= link_to "Contactenos", inicio_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Administrar", services_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Trabaje con nosotros", trabajemos_path,  data: { turbolinks: false }%></li>
+     
                   
                 </ul>
                 <p>Cortana &copy; 2015 By MegaDrupal. All rights Reserved</p>

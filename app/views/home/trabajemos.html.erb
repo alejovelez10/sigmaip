@@ -1,0 +1,97 @@
+<section id="sub-header" class="section bg-parallax1 pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Trabaje con Nosotros</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Trabaje con Nosotros", trabajemos_path,  data: { turbolinks: false }%></li>
+                    
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+<section class="section bg-white pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                           
+                                <div class="alert alert-success" style="margin-top:5px;display:none">
+                Tu pqrs se envío con exito.
+            </div>     
+                                 <%=form_tag create_trabajo_path, method: :post ,remote:true, :multipart => true do %>
+                                  <label for="">Nivel de Estudios</label><br>
+                                    
+                                  <p ><%= radio_button_tag :level, "Bachiller" %> Bachiller</p>
+                                   <p ><%= radio_button_tag :level, "Tecnico", :checked => 'true' %> Tecnico</p>
+                                    <p ><%= radio_button_tag :level, "Tecnologo" %> Tecnolog</p>
+                                    <p ><%= radio_button_tag :level, "Profesional" %> Profesional</p>
+                                    <p ><%= radio_button_tag :level, "Especialista" %> Especialista</p>
+                                   <br><br>
+                                 <div class="group clearfix">
+                                         <div class="group-item mb-30">
+                                 <%= text_field_tag :name, nil,placeholder: "Nombre" %>
+                                          </div>
+                                          <div class="group-item mb-30">
+                                   <%= text_field_tag :phone, nil, placeholder: "Telefono (Movil)" %>
+                                          </div></div>
+                                           <div class="group clearfix">
+                                         <div class="group-item mb-30">
+                                 <%= email_field_tag :email, nil,placeholder: "Email" %>
+                                          </div>
+                                          <div class="group-item mb-30">
+                                          <label for="">Adjuntar Hoja de vida</label>
+                                   <%= file_field_tag :file ,placeholder: "Adjuntar" , style:"height: 25px;"%>
+                                          </div></div>
+                                         
+                                         
+                                
+                                 <%= text_area_tag :description,nil, placeholder: "Breve description", class: "mb-30" %>
+
+                                 <%= submit_tag "Enviar Solicitud", class: "btn btn-primary radius"%>
+                                 <div id="contact-content" style="padding-top: 20px"></div>
+                            <%end%>               
+
+                          
+                        </main>
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div id="sidebar" class="sidebar">
+                        <div id="widget-area">
+                           <aside class="widget widget_contact">
+                           <p><img  src="../../img/team/equipo.jpg" alt=""></p>
+                     
+
+
+
+                            </aside><!-- /widget_contact -->
+                          
+                         
+                        </div><!-- /widget-area -->
+                    </div><!-- /sidebar -->
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>
+
+<style>
+form p
+{
+    display: inline-block;
+    margin-left: 10px;
+}
+strong
+{
+    color:#5e9bbb;
+}
+</style>
