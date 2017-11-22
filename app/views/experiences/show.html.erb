@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @experience.end_date %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @experience.customer_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @experience.user_id %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @experience.place %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @experience.service_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @experience.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @experience.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @experience.value %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @experience.state %>
+</p>
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path %>

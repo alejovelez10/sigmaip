@@ -1,0 +1,45 @@
+<div class="row">
+   <div class="col-md-12" style="padding-top: 10px;">
+<%= form_with(model: new_category, local: true) do |form| %>
+  <% if new_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(new_category.errors.count, "error") %> prohibited this new_category from being saved:</h2>
+
+      <ul>
+      <% new_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+<div class="col-md-4">
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :new_category_name, class: "form form-control" %>
+  </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-8">
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :new_category_description, class: "form form-control" %>
+  </div>
+    </div>
+    </div>
+
+ <%=form.hidden_field :user_id, :value => current_user.id %>
+
+<div class="row" style="margin-top:50px;">
+
+  
+
+<div class="col-lg-12">
+  <div class="actions">
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+   </div>  </div>
+<% end %>
+ </div> </div>

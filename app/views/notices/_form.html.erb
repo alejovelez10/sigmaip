@@ -1,0 +1,65 @@
+
+
+
+<div class="row">
+<div class="col-md-12" style="padding-top: 10px;">
+<%= form_with(model: notice, local: true) do |form| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+<div class="col-md-8">
+ <%= form.label "Nombre de la Noticia"%>
+    <%= form.text_field :name, id: :news_name, class: "form form-control"  %>
+</div>
+<div class="col-md-4">
+ <%= form.label "Categoria"%>
+     <%= form.select :new_category_id,
+               NewCategory.all.map { |u| [u.name, u.id] },
+                           { include_blank: true },
+                           { class: 'form form-control'  }
+                %>
+</div>
+<div class="col-md-4">
+ <%= form.label "Imagen" %>
+    <%= form.file_field :image, id: :news_image, class: "form form-control" %>
+</div>
+<div class="col-md-4">
+  <%= form.label "Mostrar" %>
+    <%= form.check_box :state_notice, id: :experience_state_notice, class: "form form-control" %>
+</div>
+</div>
+
+
+
+
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :news_description , class: "ckeditor"%>
+  </div>
+
+ 
+
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+
+<div class="row" style="margin-top:50px;">
+
+  
+
+<div class="col-lg-12">
+  <div class="actions">
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+   </div>  </div>
+<% end %>
+  </div>
+  </div>

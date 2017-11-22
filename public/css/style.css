@@ -652,7 +652,9 @@ iframe {
 }
 
 html .bg-parallax1 {
- 
+    /* background-attachment: fixed!important;
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }
 
 html .bg-parallax1 h1, html .bg-parallax1 h2, html .bg-parallax1 h3, html .bg-parallax1 h4, html .bg-parallax1 h5, html .bg-parallax1 h6 {
@@ -1616,7 +1618,7 @@ html .bg-color {
 
 .widget.widget_contact ul li {
   position: relative;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 3.1em;
   padding-left: 25px;
   color: #666;
@@ -3265,9 +3267,11 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 }
 
 .navigation ul > li > a {
-  line-height: 1em;
-  padding: 9px 17px;
-  color: #fff;
+    line-height: 1em;
+    padding: 9px 17px;
+    color: #fff;
+    margin-top: 25px;
+    font-size: 13px;
 }
 
 .navigation ul > li > a:hover,
@@ -3575,9 +3579,10 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 }
 
 .footer .foot-widget .widget .widget-title {
-  margin-bottom: 40px;
-  color: #fff;
-  padding-bottom: 0;
+    margin-bottom: 15px;
+    color: #fff;
+    padding-top: 61px;
+
 }
 
 .footer .foot-widget .widget .widget-title:before {
@@ -3599,6 +3604,8 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 
 .footer .foot-widget .widget p {
   color: #888;
+  text-align: justify;
+  padding: 0px 16px;
 }
 
 .footer .foot-widget .widget.widget_recent_entries ul li {
@@ -3613,6 +3620,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 @media screen and (max-width: 991px) {
   .footer .foot-widget .widget .widget-title {
     margin-bottom: 20px;
+  
   }
 }
 

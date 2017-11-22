@@ -18,7 +18,7 @@ protected
       
    
     'home' 
-     elsif (controller_name == 'home' and (action_name == "servicios" || action_name == "servicio" || action_name == "nosotros"|| action_name == "contactenos" || action_name == "pqrf" || action_name == "trabajemos" || action_name == "equipo")) 
+     elsif (controller_name == 'home' and (action_name == "servicios" || action_name == "servicio" || action_name == "nosotros"|| action_name == "contactenos" || action_name == "pqrf" || action_name == "trabajemos" || action_name == "equipo" || action_name == "experiencias" || action_name == "experiencia" || action_name == "noticia" || action_name == "noticias")) 
       
    
     'page' 

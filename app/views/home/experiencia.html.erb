@@ -1,0 +1,86 @@
+ <section id="sub-header" class="section bg-parallax1 pt-0 pb-0" data-background="../../img/bg/demo1.jpg" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1><%=@experiencia.name%></h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Experiencia", servicios_path,  data: { turbolinks: false }%></li>
+                      <li> <%= @experiencia.name%></li>
+                        
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+    <!-- END / SUB HEADER -->
+
+    <!-- CONTENT -->
+    <section class="section bg-white pt-70 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6  col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+                           
+                            <div class="work-slider mb-20">
+                                <% @experiencia.experience_images.each do |img|%>
+                                <%= (image_tag img.image_url, style: "width:500px;") if img.image_url %>
+                               
+                                <%end%>
+                            </div><!-- /work-slider -->
+
+                            <div class="work-item-slider-wrapper">
+                                <div class="work-item-slider">
+                                <%if @experiencia.experience_images.count > 1%>
+                                <% @experiencia.experience_images.each do |img|%>
+                                 <a href="#"><%= (image_tag img.image_url, style: "width:150px;height:80px") if img.image_url %></a>
+                               
+                                <%end%>
+                                <%end%>
+           
+                                </div><!-- /work-slider -->
+                            </div><!-- /work-item-slider-wrapper -->
+                               </main>
+              </div><!-- /col -->
+               </div><!-- /col -->
+               <div class="col-md-6  col-sm-12 col-xs-12">
+                            
+                            <div class="page-grid">
+                                <!-- GRID 9 COLUMNS -->
+                                <div class="page-content col-12">
+                                    <h2 class="section-header"><%=@experiencia.name%></h2>
+                                    <strong>Fecha: </strong>
+                                    <%=@experiencia.end_date%>
+                                    <br><br>
+                                    <strong>Cliente: </strong><br><br>
+                                     <strong>Ubicacion: </strong>
+                                    <%=@experiencia.service.name%><br><br>
+                                    <strong>Categoria: </strong>
+                                    <%=@experiencia.service.name%><br><br><br>
+                                     <h2 class="section-header">Descripcion</h2>
+                                   <p><%==@experiencia.description%></p>
+                                </div><!-- /page-content -->
+
+            
+                            </div><!-- /page-grid -->
+
+                            
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+                       
+                       
+                     
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+            
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>

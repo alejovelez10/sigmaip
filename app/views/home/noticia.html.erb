@@ -1,0 +1,179 @@
+ <section id="sub-header" class="section bg-parallax1 pt-0 pb-0" style="background-image: url('../../img/bg/demo1.jpg');" >
+        <div class="bg-overlay-black bg-overlay-5"></div>
+        <div class="container">
+            <div class="sub-wrapper">
+                <h1>Blog</h1>
+                
+
+                <div class="breadcrumb-container clearfix">
+                    <span>Estas aqui: </span>
+                    <ul class="breadcrumb">
+                      <li> <%= link_to "Inicio", inicio_path,  data: { turbolinks: false }%></li>
+                      <li> <%= link_to "Noticias", notices_path,  data: { turbolinks: false }%></li>
+                       
+                    </ul>
+                </div><!-- /breadcrumb -->
+            </div><!-- /sub-wrapper -->
+        </div><!-- /container -->
+  </section>
+
+
+   <!-- CONTENT -->
+    <section class="section bg-white pt-70 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div id="content" class="site-content">
+                        <main id="main">
+
+                        
+                            <article class="post format-standard">
+                                <div class="post-thumbnail">
+                                    <%if @noticia.image_url %>
+                                    <%=image_tag @noticia.image_url%>
+                                    <%else%>
+                                     <img src="img/news/1.jpg" alt="" />
+                                    <%end%>  
+
+                                   
+                                    
+                                </div><!--/ post-thumbnail -->
+
+                                <header class="entry-header">
+                                    <h2 class="entry-title h4"><%=link_to "#{@noticia.name}", noticia_path(@noticia.id)%></h2>
+                                    <span class="byline">Escrita por <%=link_to "#{@noticia.user.names}", equipo_path(@noticia.user.id)%> - <%=get_date(@noticia.created_at)%> </span>
+                                    
+                                   
+                                </header><!-- /header -->
+
+                                <div class="entry-content" >
+                                <div>
+                                     <%==@noticia.description%>
+
+                                 </div>
+                                                                    
+                                </div><!-- /entry-content -->
+
+                              
+                            </article><!-- /post -->
+                            
+                            
+                            <!-- PAGENAVI -->
+                          
+                            <!-- END / PAGENAVI -->
+                        </main>
+                         <main id="main">
+                              <div class="divider thick light pt-0"></div>
+
+                            <!-- COMMENT -->
+                            <div id="comments" class="comments-area">
+                                <h2 class="section-header"> <%=@noticia.comments.count%> Comentarios</h2>
+                                <ol class="comment-list">
+                                <% @noticia.comments.order(created_at: :desc).each do |comment|%>
+                                    <li class="comment parent">
+                                        <article class="comment-body clearfix">
+                                            
+
+                                            <div class="main-comment">
+                                                <header class="comment-meta">
+                                                    <div class="comment-author">
+                                                        <b class="fn"><%=comment.name%></b>
+                                                        <span class="date"><%=get_date(comment.created_at)%></span>
+                                                    </div><!-- /comment-author -->
+                                                </header><!-- /comment-meta -->
+
+                                                <div class="comment-content">
+                                                    <p><%=comment.message%></p>
+                                                </div><!-- /comment-content -->
+
+                                               
+                                            </div><!-- /main-comment -->
+                                        </article><!-- /comment-body -->
+
+
+                                      
+                                    </li><!-- /comment -->
+
+                                <%end%>
+                                  
+
+                                   
+                                </ol><!-- /comment-list -->
+
+                                <!-- RESPOND -->
+                                <div id="respond" class="comment-respond">
+                                    <h2 class="section-header">Crea un comentario</h2>
+                                <div class="alert alert-success" style="margin-top:5px;display:none">
+                                                Tu comentario se creo con exito.
+                                            </div>     
+                                 <%=form_tag create_comentario_path, method: :post, remote:true do %>
+                                 <div class="group clearfix">
+                                         <div class="group-item mb-30">
+                                 <%= text_field_tag :name, nil,placeholder: "Nombre" %>
+                                          </div>
+                                          <div class="group-item mb-30">
+                                
+                                 <%= email_field_tag :email, nil, placeholder: "Email"%>
+                                   </div>
+                                          </div>
+                               
+                                  <%= hidden_field_tag :notice_id, @noticia.id %>
+                               
+                                 <%= text_area_tag :message,nil, placeholder: "Ccmentario", class: "mb-30" %>
+
+                                 <%= submit_tag "Enviar Mensaje", class: "btn btn-primary radius"%>
+                                 <div id="contact-content" style="padding-top: 20px"></div>
+                            <%end%>       
+                                  
+                                </div>
+                            </div><!-- /comment-area -->
+                           
+
+                            <br />
+                                   
+
+                          
+                        </main>
+                    </div><!-- /site-content -->
+                </div><!-- /col -->
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div id="sidebar" class="sidebar">
+                        <div id="widget-area">
+                         
+                            <aside class="widget widget_categories">
+                                <h3 class="widget-title h5">Categorias</h3>
+                                <ul>
+                                    <% @categories.each do |cat| %>
+                                    <li class="cat-item">
+                                        <%=link_to "#{cat.name}", noticias_path("#{cat.name}")%>
+                                        
+                                    </li>
+                                    <%end%>
+                                   
+                                </ul>
+                            </aside><!-- /widget_categories -->
+
+                            <aside class="widget widget_recent_entries">
+                                <h3 class="widget-title h5">Entradas Recientes</h3>
+                                <ul>
+                                <% @noticias1.last(5).each do |noti| %>
+                                    <li>
+                                    <%= link_to  noticia_path(noti.id) do %>
+                                        <%=image_tag noti.image_url if noti.image_url%>        
+                                         <span class="title" data-number-line="2"><%=noti.name%></span>
+                                         <span class="date"><%=get_date(noti.created_at)%></span>
+                                    <%end%>
+
+                                    </li>
+                                   <%end%>
+                                </ul>
+                            </aside><!-- /widget_recent_entries -->
+
+                       
+                        </div><!-- /widget-area -->
+                    </div><!-- /sidebar -->
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </section>

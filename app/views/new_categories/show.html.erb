@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @new_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @new_category.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @new_category.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_new_category_path(@new_category) %> |
+<%= link_to 'Back', new_categories_path %>

@@ -1,0 +1,20 @@
+<% if @comentario.errors.blank? %>
+
+    $('.comment-list').prepend("<li class='comment parent'><article class='comment-body clearfix'><div class='main-comment'><header class='comment-meta'><div class='comment-author'><b class='fn'><%=@comentario.name%></b><span class='date'><%=get_date(@comentario.created_at)%></span></div></header><div class='comment-content'><p><%=@comentario.message%></p></div> </div></article></li>")
+ $('form input:text').val("");
+ $('form input:file').val("");
+
+ $('form textarea').val("");
+       
+ $('.alert-success').fadeIn();
+    setTimeout(function() {
+    
+        $('.alert-success').fadeOut();
+    }, 2000);
+
+
+<% else %>
+
+<% end %>
+
+
