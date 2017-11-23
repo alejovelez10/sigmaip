@@ -70,7 +70,7 @@
                              <div class="divider pt-20"></div>
                                 <div class="col-sm-9 col-xs-12">
                                 
-                                     <h2 class="section-header">Todos los Servicios</h2>
+                                     <h2 class="section-header">Servicios Especificos</h2>
                                    <p><%==@servicio.sub_services%></p>
                                     
                                 </div><!-- /col -->
@@ -88,7 +88,7 @@
                                 <ul>
                                 <% @services.each do |servi| %>
                                     <li>
-                                    <%= link_to  service_path(servi.id) do %>
+                                    <%= link_to  servicio_path(servi.id) do %>
                                         <%=image_tag servi.service_images.where(order: 1).first.imagen_url %>        
                                          <span class="title" data-number-line="2"><%=servi.name%></span>
                                          <span class="date">ir a servicio</span>
