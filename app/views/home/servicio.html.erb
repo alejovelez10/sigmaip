@@ -52,9 +52,9 @@
                             
                             <div class="page-grid">
                                 <!-- GRID 9 COLUMNS -->
-                                <div class="page-content col-12">
+                                <div class="page-content col-12" >
                                     <h2 class="section-header">Descripción</h2>
-                                    <%==@servicio.description%>
+                                    <p style="text-align: justify"><%==@servicio.description%></p>
                                 </div><!-- /page-content -->
 
             
@@ -67,12 +67,42 @@
             </div><!-- /row -->
                        
                             <div class="row">
-                                <div class="col-sm-12 col-xs-12">
-                                <div class="divider pt-20"></div>
-                                     <h2 class="section-header">Servicios Especificos</h2>
+                             <div class="divider pt-20"></div>
+                                <div class="col-sm-9 col-xs-12">
+                                
+                                     <h2 class="section-header">Todos los Servicios</h2>
                                    <p><%==@servicio.sub_services%></p>
                                     
                                 </div><!-- /col -->
+                                
+
+
+      <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div id="sidebar" class="sidebar">
+                        <div id="widget-area">
+                         
+                            
+
+                            <aside class="widget widget_recent_entries">
+                                <h3 class="widget-title h5">Mas servicios</h3>
+                                <ul>
+                                <% @services.each do |servi| %>
+                                    <li>
+                                    <%= link_to  service_path(servi.id) do %>
+                                        <%=image_tag servi.service_images.where(order: 1).first.imagen_url %>        
+                                         <span class="title" data-number-line="2"><%=servi.name%></span>
+                                         <span class="date">ir a servicio</span>
+                                    <%end%>
+
+                                    </li>
+                                   <%end%>
+                                </ul>
+                            </aside><!-- /widget_recent_entries -->
+                            
+                       
+                        </div><!-- /widget-area -->
+                    </div><!-- /sidebar -->
+                </div><!-- /col -->
                             </div><!-- /row -->
 
                         
@@ -84,3 +114,4 @@
             </div><!-- /row -->
         </div><!-- /container -->
     </section>
+     

@@ -16,6 +16,7 @@ class HomeController < ApplicationController
 
   def servicio
     @servicio = Service.find(params[:id])
+    @services = Service.all.order(updated_at: :asc)
   end
   
   def experiencias
