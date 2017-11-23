@@ -33,7 +33,8 @@
                             <div class="post-thumbnail hover-link">
                                 <%= (image_tag service.service_images.where(order: 1).first.imagen_url , class:"service-img" )%>
                                 
-                                <a href="service-single.html" class="overlay ov"><i class="fa fa-link"></i></a>
+                                    <%=link_to servicio_path(service.id), class:"overlay",   data: { turbolinks: false } do %>
+                          <i class="fa fa-link"></i>
                             </div><!--/ post-thumbnail -->
                             <div class="mb-30 service-desc">
                                 <p><%== service.description%></p>
