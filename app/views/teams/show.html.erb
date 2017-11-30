@@ -9,36 +9,36 @@
   <%= @team.position %>
 </p>
 <p>
-  <strong>Descripción:</strong><br>
+  <strong class="strong1">Descripción:</strong><br>
   <%= @team.description %>
 </p>
 
 <p>
-  <strong>Imagen:</strong><br>
+  <strongclass="strong1">Imagen:</strong><br>
   <%= image_tag @team.image_url, style:"width:100px" if @team.image_url %>
 </p>
 
 
 <p>
-  <strong>Linkedin:</strong><br>
+  <strong class="strong1">Linkedin:</strong><br>
   <%= @team.linkedin %>
 </p>
 
 <p>
-  <strong>Twitter:</strong><br>
+  <strong class="strong1">Twitter:</strong><br>
   <%= @team.twitter %>
 </p>
 
 
 
 <p>
-  <strong>Experience:</strong><br>
+  <strong class="strong1">Experience:</strong><br>
   <%== @team.experience %>
 </p>
 
 
 <style>
-strong
+.strong1
 {
   color:#428bca;
   font-size: 22px;
