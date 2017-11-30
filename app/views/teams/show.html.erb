@@ -1,44 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong><br>
   <%= @team.name %>
 </p>
-
 <p>
-  <strong>Description:</strong>
+  <strong>Cargo:</strong><br>
+  <%= @team.position %>
+</p>
+<p>
+  <strong>Descripción:</strong><br>
   <%= @team.description %>
 </p>
 
 <p>
-  <strong>Experience:</strong>
-  <%= @team.experience %>
+  <strong>Imagen:</strong><br>
+  <%= image_tag @team.image_url, style:"width:100px" if @team.image_url %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @team.image %>
-</p>
 
 <p>
-  <strong>User:</strong>
-  <%= @team.user_id %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
+  <strong>Linkedin:</strong><br>
   <%= @team.linkedin %>
 </p>
 
 <p>
-  <strong>Twitter:</strong>
+  <strong>Twitter:</strong><br>
   <%= @team.twitter %>
 </p>
 
+
+
 <p>
-  <strong>Position:</strong>
-  <%= @team.position %>
+  <strong>Experience:</strong><br>
+  <%== @team.experience %>
 </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+
+<style>
+strong
+{
+  color:#428bca;
+  font-size: 22px;
+}
+  
+</style>

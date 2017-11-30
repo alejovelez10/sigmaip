@@ -1,24 +1,32 @@
+<br>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @service.name %>
+  <strong>Nombre:</strong><br>
+  <%== @service.name %>
+</p>
+<p>
+  <strong>Imagenes:</strong><br>
+  <% @service.service_images.each do  |img|%>  
+  <%=image_tag img.imagen_url, style:"width:200px;" if img.image_url%>
+  <%end%>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @service.description %>
+  <strong>Descripción:</strong><br>
+  <%== @service.description %>
 </p>
 
 <p>
-  <strong>Sub services:</strong>
-  <%= @service.sub_services %>
+  <strong>Sub servicios:</strong><br>
+  <%== @service.sub_services %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @service.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<style>
+strong
+{
+	color:#428bca;
+	font-size: 22px;
+}
+	
+</style>

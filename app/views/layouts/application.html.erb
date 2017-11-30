@@ -27,18 +27,18 @@ font-family: 'Rajdhani', sans-serif;
 </style>
   <body class= "application">
 <div class="container">
+<br>
 <%if user_signed_in? %>
-<%= link_to "Servicios" ,services_path %>
-<%= link_to "Team" ,teams_path %>
-<%= link_to "Contactenos" ,contacts_path %>
-<%= link_to "pqrs" ,claims_path %>
-<%= link_to "Solicitudes de Trbajo" ,jobs_path %>
-<%= link_to "Experiencia" , experiences_path %>
-<%= link_to "Clientes" , customers_path %>
-<%= link_to "Noticias" , notices_path %>
-
-<%= link_to "Categorias Noticias" , new_categories_path %>
-<%= link_to "Comentarios" , comments_path %>
+<%= link_to "Servicios" ,services_path , class: "btn btn-primary"%>
+<%= link_to "Equipo" ,teams_path, class: "btn btn-primary" %>
+<%= link_to "Experiencia" , experiences_path, class: "btn btn-primary" %>
+<%= link_to "Clientes" , customers_path ,class: "btn btn-primary" %>
+<%= link_to "Noticias" , notices_path ,class: "btn btn-primary" %>
+<%= link_to "Contactenos" ,contacts_path, class: "btn btn-primary" %>
+<%= link_to "pqrs" ,claims_path, class: "btn btn-primary" %>
+<%= link_to "Solicitudes de Trbajo" ,jobs_path, class: "btn btn-primary" %>
+<%= link_to "Categorias Noticias" , new_categories_path  ,class: "btn btn-primary"%>
+<%= link_to "Comentarios" , comments_path , class: "btn btn-primary"%>
 
 
 

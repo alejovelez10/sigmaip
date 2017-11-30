@@ -1,17 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Notices</h1>
 
-<table>
+<div class="row">
+<div class="col-md-8">
+  <h1>Entradas</h1>
+</div>
+<div class="col-md-4 text-right">
+  <%= link_to 'Nueva Entrada', new_notice_path,:"data-turbolinks" => false, class: "btn btn-primary" %>
+
+</div>
+  
+</div>
+
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>State</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th>Categoria</th>
+      <th>Imagen</th>
+   
+      <th colspan="3" style="width:15%"></th>
     </tr>
   </thead>
 
@@ -19,14 +27,12 @@
     <% @notices.each do |notice| %>
       <tr>
         <td><%= notice.name %></td>
-        <td><%= notice.category %></td>
-        <td><%= notice.description %></td>
-        <td><%= notice.image %></td>
-        <td><%= notice.state %></td>
-        <td><%= notice.user_id %></td>
-        <td><%= link_to 'Show', notice %></td>
-        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= notice.new_category.name %></td>
+      
+        <td><%= image_tag notice.image_url, style: "width:100px;" if notice.image_url%></td>
+        <td><%= link_to 'Ver', notice %></td>
+        <td><%= link_to 'Editar', edit_notice_path(notice) %></td>
+        <td><%= link_to 'Eliminar', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Notice', new_notice_path %>
+

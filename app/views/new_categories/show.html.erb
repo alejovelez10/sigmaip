@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong><br>
   <%= @new_category.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion:</strong><br>
   <%= @new_category.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @new_category.user_id %>
-</p>
 
-<%= link_to 'Edit', edit_new_category_path(@new_category) %> |
-<%= link_to 'Back', new_categories_path %>
+<style>
+strong
+{
+  color:#428bca;
+  font-size: 22px;
+}
+  
+</style>

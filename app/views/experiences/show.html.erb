@@ -1,49 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>End date:</strong>
-  <%= @experience.end_date %>
+  <strong>Nombre:</strong><br>
+  <%= @experience.name %>
+</p>
+
+
+<p>
+  <strong>Fecha de Terminación:</strong><br>
+  <%= get_datew(@experience.end_date) %>
 </p>
 
 <p>
-  <strong>Customer:</strong>
-  <%= @experience.customer_id %>
+  <strong>Cliente:</strong><br>
+  <%= @experience.customer.name %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @experience.user_id %>
+  <strong>Imagenes:</strong><br>
+  <% @experience.experience_images.each do  |img|%>  
+  <%=image_tag img.image_url, style:"width:200px;" if img.image_url%>
+  <%end%>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>Lugar:</strong><br>
   <%= @experience.place %>
 </p>
 
 <p>
-  <strong>Service:</strong>
-  <%= @experience.service_id %>
+  <strong>Categoria:</strong><br>
+  <%= @experience.service.name %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @experience.description %>
-</p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @experience.name %>
-</p>
-
-<p>
-  <strong>Value:</strong>
+  <strong>Valor:</strong><br>
   <%= @experience.value %>
 </p>
 
+
+
 <p>
-  <strong>State:</strong>
-  <%= @experience.state %>
+  <strong>Descripcion:</strong><br>
+  <%== @experience.description %>
 </p>
 
-<%= link_to 'Edit', edit_experience_path(@experience) %> |
-<%= link_to 'Back', experiences_path %>
+<style>
+strong
+{
+  color:#428bca;
+  font-size: 22px;
+}
+  
+</style>

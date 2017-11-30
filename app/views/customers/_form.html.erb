@@ -15,32 +15,30 @@
 
       <div class="row">
          <div class="col-md-6">
-          <%= form.label :name %>
+          <%= form.label "Nombre" %>
     <%= form.text_field :name, id: :customer_name , class: "form form-control"%>
   </div>
-          <div class="col-md-6">
-            <%= form.label :description %>
-    <%= form.text_field :description, id: :customer_description, class: "form form-control" %>
-  </div>
+          
   </div>
 
     <div class="row">
          <div class="col-md-6">
     <%= form.label :logo %>
-    <%= form.file_field :logo, id: :customer_logo  , class: "form form-control"%>
-  </div>
-          <div class="col-md-6">
-      <%= form.label :state %>
+    <%= form.file_field :logo, id: :customer_logo  , class: "form form-control"%><br>
+    <%= form.label "Estado" %>
     <%= form.check_box :state, id: :customer_state, class: "form form-control" %>
   </div>
+          <div class="col-md-6">
+      
+  </div>
   </div>
 
-
+<br>
  <%=form.hidden_field :user_id, :value => current_user.id %>
-       <div class="row">
+       <div class="row ">
       <div class="col-lg-12">
          <div class="actions">
-            <%= form.submit "Guardar", class: "btn btn-primary" %>
+            <%= form.submit "Guardar", class: "btn btn-primary btn-lg" %>
          </div>
       </div>
    </div>
