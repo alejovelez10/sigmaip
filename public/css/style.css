@@ -40,9 +40,6 @@ body {
   
 }
 
-body {
-    background-color: lightgreen;
-}
 
 @media only screen and (max-width: 500px) {
     .service-img{
