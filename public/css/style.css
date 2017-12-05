@@ -28,9 +28,9 @@ body {
 }
 .service-desc{
 
-height: 155px;
-max-height: 155px;
-overflow: hidden;
+    height: 180px;
+    max-height: 180px;
+    overflow: hidden;
 
 }
 .ov
