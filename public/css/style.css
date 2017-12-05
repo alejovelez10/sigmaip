@@ -39,6 +39,33 @@ body {
     width: 80% !important;
   
 }
+
+body {
+    background-color: lightgreen;
+}
+
+@media only screen and (max-width: 500px) {
+    .service-img{
+
+  height: 260px !important;
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+.ov
+{
+  margin-left: 0px !important;
+    width: 100% !important;
+  
+}
+.service-desc p{
+
+    text-align: justify !important;
+    padding: 0px 0px 0px 0px !important;
+}
+}
+
+
+
 #page-wrap {
   position: relative;
   overflow: hidden;
