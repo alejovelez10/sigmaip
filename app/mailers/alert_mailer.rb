@@ -1,18 +1,18 @@
 class AlertMailer < ApplicationMailer
 	def contact_mail(contact)
        @contact = contact
-       mail(to: "alejovelez10@gmail.com", subject: "Alguien nos contacto")
+       mail(to: "churtado@sigmaip.co", subject: "Alguien nos contacto")
      end
      def pqrs_mail(pqrs)
        @pqrs = pqrs
-       mail(to: "alejovelez10@gmail.com", subject: "Alguien genero una pqrs")
+       mail(to: "jmunoz@sigmaip.co", subject: "Alguien genero una pqrs")
      end
      def job_mail(job)
        @job = job
-       mail(to: "alejovelez10@gmail.com", subject: "Alguien quiere trabajar con nosotros")
+       mail(to: "jmunoz@gmail.com", subject: "Alguien quiere trabajar con nosotros")
      end
      def comment_mail(comment)
        @comment = comment
-       mail(to: "alejovelez10@gmail.com", subject: "Alguien comento una entrada")
+       mail(to: "churtado@sigmaip.co", subject: "Alguien comento una entrada")
      end
 end
