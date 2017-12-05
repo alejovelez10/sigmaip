@@ -9,7 +9,7 @@ class AlertMailer < ApplicationMailer
      end
      def job_mail(job)
        @job = job
-       mail(to: "jmunoz@gmail.com", subject: "Alguien quiere trabajar con nosotros")
+       mail(to: "jmunoz@sigmaip.co", subject: "Alguien quiere trabajar con nosotros")
      end
      def comment_mail(comment)
        @comment = comment
