@@ -3650,7 +3650,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 
 .footer .foot-credit {
   position: relative;
-  padding: 20px 0;
+  padding: 10px 0 39px 0;
   background-color: #111;
 }
 
@@ -3658,6 +3658,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
   float: left;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
+  margin-top: 20px;
   color: #878787;
   text-transform: uppercase;
   line-height: 2.5em;
