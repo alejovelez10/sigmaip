@@ -2907,6 +2907,7 @@ select.country + .select2 .select2-selection--single .select2-selection__arrow {
 .header .main-header.main-header-3 {
   background-color: #fff;
   padding: 10px 0 10px 0;
+
 }
 
 .header .main-header.main-header-3 .navigation ul > li > a {

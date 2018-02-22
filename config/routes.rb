@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :file_systems
+  resources :rols
   resources :comments
   resources :notices
   resources :new_categories
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :teams
   resources :services
-  devise_for :users
+
   root 'home#inicio'
   get 'home/inicio', as: "inicio"
   get 'servicios' , to: "home#servicios", as: "servicios"
@@ -27,5 +29,17 @@ Rails.application.routes.draw do
   post 'create_pqrf', to: "home#create_pqrf", as: "create_pqrf"
   post 'create_trabajo', to: "home#create_trabajo", as: "create_trabajo"
   post 'create_comentario', to: "home#create_comentario", as: "create_comentario"
+
+
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do 
+    get "users/index", to: "users/views#index", as: "users_index"
+    get '/users/new', to: 'users/views#new_user', as: "new_user"
+    post "create_user", to: "users/views#create_user", as: "create_user"
+    get '/users/:id/edit', to: 'users/views#edit_user', as: "edit_user"
+    post "/users/update_user/edit", to: "users/views#update_user", as: "update_user"
+    delete "delete_user/:id", to: "users/views#delete_user", as: "delete_user"
+
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,127 @@
+<div id="contact-modal" class="modal fade">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title">Crear Usuario</h4>
+      </div>
+<%= form_tag update_user_path, remote: true do %>
+  <div class="alert alert-danger" style="display:none">
+    <ul>
+    
+    </ul>
+  </div>
+      <div class="modal-body">
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    
+<div class="form-group">
+    <%= label_tag "Email" %>
+    <%= text_field_tag :email, @user.email,:class => '' %>
+  </div>
+  </div>
+   <div class="col-md-6">
+    <div class="form-group">
+    <%= label_tag "Cedula" %>
+    <%= text_field_tag :document, @user.document,:class => '' %>
+  </div>
+
+  </div>
+   <div class="col-md-6">
+    
+<div class="form-group">
+    <%= label_tag "Nombres" %>
+    <%= text_field_tag :names, @user.names,:class => '' %>
+  </div>
+  </div>
+   <div class="col-md-6">
+    
+<div class="form-group">
+    <%= label_tag "Apellidos" %>
+    <%= text_field_tag :last_names,@user.last_names,:class => '' %>
+  </div>
+
+  </div>
+
+ <div class="col-md-6">
+       <div class="form-group">
+    <%= label_tag "Rol" %>
+    <%= select_tag 'rol_id', options_for_select(@rols.collect{ |u| ["#{u.name}", u.id] }, @user.rol.id), {:multiple => false,class: 'form-control'}%>
+  
+
+  </div>
+  </div>
+
+
+   <div class="col-md-6">
+    
+    <div class="form-group">
+    <%= label_tag "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= password_field_tag :password,nil,  class: "form-control formus" %>
+  </div>
+  </div>
+   <div class="col-md-6">
+    
+
+  <div class="field">
+    <%= label_tag "Confirmar Contraseña" %><br />
+    <%= password_field_tag :password_confirmation, nil ,class: "form-control formus" %>
+  </div>
+  </div>
+</div>
+
+
+<%= hidden_field_tag :id ,@user.id %>
+
+
+ 
+<br>
+
+      <div class="modal-footer text-center">
+       
+        <%= submit_tag "Guardar", class: 'btn btn-primary ' %><br><br>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+<% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<style type="text/css" media="screen">
+  
+
+@media (max-width: 900px) {
+   .chosen-container
+  {
+
+    width: 200px !important;
+  }
+}
+input {
+    height: 36px;
+}
+</style>
+
+<script>
+   $(document).on('turbolinks:load',function() {
+   $('.chosen-select1').chosen(
+         {
+   
+           allow_single_deselect: true,
+           no_results_text: 'No hay resultados',
+           width: '850px;',
+           placeholder_text_single: "Seleccione una opción",
+           placeholder_text_multiple: "Seleccione una varias opciones"
+   
+         });
+         });
+</script>

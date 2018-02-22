@@ -1,0 +1,2 @@
+class FileSystem < ApplicationRecord
+end

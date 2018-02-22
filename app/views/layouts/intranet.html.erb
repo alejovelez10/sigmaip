@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sigmaip</title>
+    <%= csrf_meta_tags %>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ <link href="https://fonts.googleapis.com/css?family=Rajdhani:700" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link href="https://fonts.googleapis.com/css?family=Rajdhani:700" rel="stylesheet">
+    <!-- GOOGLE FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
+    <!-- CSS LIBRARY -->
+    <!-- Bootstrap -->
+  
+       <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">   
+    <!-- Font Icon -->
+    <link type="text/css" href="../../css/lib/font-awesome.min.css" rel="stylesheet">
+   
+
+    <!-- Revolution Slider -->
+ 
+
+    <!-- Custom CSS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+  </head>
+<style>
+	
+
+</style>
+  <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--inicio-->
+
+<!-- /END PRELOAD -->
+
+<!-- HEADER 3 -->
+<header class="header head3">
+    <div class="searchbar">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" name="search" value="" placeholder="Search" />
+                <span class="input-group-btn"><button type="button" class="btn-close"></button></span>
+            </div><!-- /input-group -->
+        </div><!-- /container -->
+    </div><!-- /searchbar -->
+
+    <div class="top-header">
+        <div class="container">
+            <div class="top-left">
+                <ul class="social-header">
+                    <li><a href="https://www.facebook.com/search/top/?q=sigma%20ingenieria%20y%20proyectos" target="_blank" ><i class="fa fa-facebook"></i></a></li>
+           
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  
+               
+                </ul><!-- /social-header -->
+            </div><!-- /top-left -->
+            <div class="top-right">
+                <ul class="info-header">
+                    
+                    <li><i class="icon icon-phone"></i>(547) 2985861</li>
+                     <li><i class="fa fa-mobile"></i>+57 350 7070746</li>
+                                <li><i class="fa fa-envelope-o"></i><a href="#">info@sigmaip.co</a></li>
+                                  <li><%= link_to "Cerrar Sesion", destroy_user_session_path, :method => :delete%></li>
+                </ul><!-- /info-header -->
+            </div><!-- /top-right -->
+        </div><!-- /container -->
+    </div><!-- /top-header -->
+
+    <div class="main-header main-header-3">
+        <div class="container">
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="home/inicio"><img class="img" src="../../img/logo.png" alt="logo" /></a>
+            </div><!-- /#logo -->
+            <!-- END / LOGO -->
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-nav-menu" data-menu-number="3">
+                <span class="icon">&nbsp;</span>
+            </div><!-- /mobile-nav-menu -->
+            <!-- /END MOBILE MENU -->
+
+            <!-- SEARCH BUTTON -->
+            <div class="search-btn"><span class="fa fa-search"></span></div>
+            <!-- END / SEARCH BUTTON -->
+
+            <!-- NAVIGATION -->
+            <nav class="navigation nav3" data-menu-type="1199">
+                  <ul class="nav text-uppercase" style="font-family: 'Rajdhani', sans-serif;">
+                    <li>
+                       <%= link_to "", root_path,  data: { turbolinks: false }%>
+                    </li>
+      
+                    <li ><%= link_to "Quiénes Somos", nosotros_path,  data: { turbolinks: false }%>
+                    </li>
+                    <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
+                   
+                  
+                    <li><%=link_to "Proyectos", noticias_path("todas"),  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Gestion Doumental", contactenos_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Configuracion", pqrf_path,  data: { turbolinks: false }%></li>
+                                        <li>
+                        <%= (link_to "Pagina Web", services_path,  data: { turbolinks: false }) if current_user.rol.admin_page%>
+                       
+                    </li>
+
+                </ul><!-- /nav -->
+            </nav>
+            <!-- END / NAVIGATION -->
+        </div><!-- /container -->
+    </div><!-- /main-header -->
+</header><!-- /header -->
+<!-- END / HEADER 3 -->
+
+<div id="page-wrap" style="min-height: 450px;background: white;">
+    <!-- SUB HEADER -->
+
+    <!-- END / SUB HEADER -->
+
+    <!-- CONTENT -->
+    <%= yield %>
+    <!-- END / CONTENT -->
+
+    <!-- FOOTER -->
+   </div><!-- /page-wrap -->
+    <footer id="" class="footer bg-dark">
+        
+
+        <div class="foot-credit">
+            <div class="container">
+                <ul>
+                    <li><%=link_to "Administrar", services_path,  data: { turbolinks: false }%></li>
+                    <li><%= link_to "Trabaje con nosotros", trabajemos_path,  data: { turbolinks: false }%></li>
+     
+                  
+                </ul>
+                <p>© 2017 Sigmaip - Todos los derechos reservados</p>
+            </div><!-- /container -->
+        </div><!-- /foot-credit -->
+    </footer>
+    <!-- END / FOOTER -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Image Loaded -->
+    <script type="text/javascript" src="../../js/lib/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Isotope -->
+    <script type="text/javascript" src="../../js/lib/isotope.pkgd.min.js"></script>
+
+    
+    <!-- Custom jQuery -->
+    <script type="text/javascript" src="../../js/scripts.js"></script>
+
+<style>
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+    
+</style>
+<!-- Código de instalación CLIENGO para www.sigmaip.co --> 
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'nAbIIyzgdt';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+  </body>
+
+</html>
+
+

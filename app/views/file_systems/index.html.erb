@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>File Systems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type file</th>
+      <th>File</th>
+      <th>Level</th>
+      <th>Folder</th>
+      <th>User</th>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @file_systems.each do |file_system| %>
+      <tr>
+        <td><%= file_system.name %></td>
+        <td><%= file_system.type_file %></td>
+        <td><%= file_system.file %></td>
+        <td><%= file_system.level %></td>
+        <td><%= file_system.folder_id %></td>
+        <td><%= file_system.user_id %></td>
+        <td><%= file_system.code %></td>
+        <td><%= link_to 'Show', file_system %></td>
+        <td><%= link_to 'Edit', edit_file_system_path(file_system) %></td>
+        <td><%= link_to 'Destroy', file_system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New File System', new_file_system_path %>

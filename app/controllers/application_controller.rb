@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+    before_action :configure_permitted_parameters, if: :devise_controller?
+
+protected
+
+  def configure_permitted_parameters
+    [:account_update,:sign_up].each do |metodo|
+    devise_parameter_sanitizer.permit(metodo, keys: [:email,:names,:last_names,:rol_id, :birth_date,:document,:state,:avatar])
+    end
+  end
 
 
 layout :layout_for_selection
@@ -22,7 +31,10 @@ protected
       
    
     'page' 
+    
+    elsif (controller_name == 'views' || controller_name == 'rols')
 
+      'intranet'
 
       
     else

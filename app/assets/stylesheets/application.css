@@ -44,10 +44,40 @@
 
 .titulo-form
 {
-   font-family: 'Days One', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
     text-align:center;
     font-size: 2em;
     margin: 0px;
        
     color: #b9b9b9;
+}
+
+.margin-top-40
+{
+  margin-top: 40px;
+}
+
+.title-h2
+{
+
+    color: gray;
+    font-weight: bold;
+    margin-left: 25px;
+    font-size: 40px;
+  font-family: 'Rajdhani', sans-serif;
+
+
+}
+
+.label-primary {
+    background-color: #5e9bbb !important;
+}
+
+
+  
+  .ck
+{
+   width: 35px !important;
+    height: 35px !important;
+
 }

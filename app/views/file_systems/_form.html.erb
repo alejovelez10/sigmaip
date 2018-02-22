@@ -1,0 +1,52 @@
+<%= form_with(model: file_system, local: true) do |form| %>
+  <% if file_system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_system.errors.count, "error") %> prohibited this file_system from being saved:</h2>
+
+      <ul>
+      <% file_system.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :file_system_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_file %>
+    <%= form.check_box :type_file, id: :file_system_type_file %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.text_field :file, id: :file_system_file %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level, id: :file_system_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :folder_id %>
+    <%= form.text_field :folder_id, id: :file_system_folder_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :file_system_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :file_system_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

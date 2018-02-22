@@ -15,13 +15,21 @@
 //= require jquery_ujs
 //= require ckeditor-jquery
 //= require jquery_nested_form
-
+//= require twitter/bootstrap
+//= require chosen-jquery
 //= require config
+//= require turbolinks
 //= require_tree .
 
 
 
 $(document).on('turbolinks:load',function() {
+
+
+   
+
+   
+
 
 
 $('.ckeditor').ckeditor({
