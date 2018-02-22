@@ -49,6 +49,7 @@ gem 'underscore-rails'
 gem 'ckeditor_rails', '~> 4.5', '>= 4.5.10'
 gem "mini_magick"
 gem 'chosen-rails'
+gem 'unf_ext', '~> 0.0.7.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
