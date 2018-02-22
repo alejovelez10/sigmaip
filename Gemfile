@@ -41,7 +41,7 @@ gem 'twitter-bootstrap-rails', '~> 4.0'
 gem 'therubyracer',  platforms: :ruby
 gem 'pusher', '~> 1.3'
 gem 'jquery-ui-rails'
-gem 'fog', '~> 1.38'
+
 gem 'figaro'
 gem 'geocoder'
 gem 'gmaps4rails'
