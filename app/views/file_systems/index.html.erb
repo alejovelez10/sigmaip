@@ -48,7 +48,20 @@
       <div class = "row title-table">
          <div class = "col-md-8">
             <p class="title-h2" style="display:inline-block">Raiz <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
+             
+              <div class="form-group fil" >
+         <%= form_tag(file_systems_path, :method => "get", id: "search-form") do %>
+   
+  <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
+ 
 
+  
+      
+         <%= submit_tag "Buscar", :class => "btn btn-primary search1" %>
+          
+    
+         <% end %>
+      </div>
          
          </div>
       

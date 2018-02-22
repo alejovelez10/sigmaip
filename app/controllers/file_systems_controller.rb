@@ -7,10 +7,10 @@ class FileSystemsController < ApplicationController
 
    if current_user.rol.admin_doc
      
-         @file_systems = FileSystem.where(level: 0, folder_id: 0)
+         @file_systems = FileSystem.where(level: 0, folder_id: 0).search(params[:search])
    else
      
-       @file_systems = Rol.find(current_user.rol.id).file_systems.where(level: 0, folder_id: 0)
+       @file_systems = Rol.find(current_user.rol.id).file_systems.where(level: 0, folder_id: 0).search(params[:search])
    end
 
   end
@@ -45,10 +45,10 @@ class FileSystemsController < ApplicationController
     #puts @array
       if current_user.rol.admin_doc
      
-          @file_systems = FileSystem.where(level: params[:level], folder_id: params[:id]).order(type_file: :desc).order(created_at: :desc)
+          @file_systems = FileSystem.where(level: params[:level], folder_id: params[:id]).search(params[:search]).order(type_file: :desc).order(created_at: :desc)
    else
      
-       @file_systems = Rol.find(current_user.rol.id).file_systems.where(level: params[:level], folder_id: params[:id]).order(type_file: :desc).order(created_at: :desc)
+       @file_systems = Rol.find(current_user.rol.id).file_systems.where(level: params[:level], folder_id: params[:id]).search(params[:search]).order(type_file: :desc).order(created_at: :desc)
    end
     
   end

@@ -59,9 +59,9 @@
         <%end%>
       
     
-<div class="col-md-6">
+<div class="col-md-12">
    <%= form.label "Permisos" %><br>
-               <%= form.select :rol_ids, get_rols.collect {|c| ["#{c.name}", c.id]}, {prompt: false}, {:multiple => true,class: ''} %>
+               <%= form.select :rol_ids, get_rols.collect {|c| ["#{c.name}", c.id]}, {prompt: false}, {:multiple => true,class: 'chosen-select1 form form-control'} %>
 </div>
 
     </div>
@@ -96,3 +96,23 @@
 }
   
 </style>
+
+<script>
+   $(document).ready(function(){
+     
+
+     
+     $('.chosen-select1').chosen(
+           {
+   
+             allow_single_deselect: true,
+             no_results_text: 'No hay resultados',
+             width: '100%',
+             placeholder_text_single: "Seleccione una opción",
+             placeholder_text_multiple: "Seleccione una varias opciones"
+   
+           });
+   
+   })
+   
+</script>

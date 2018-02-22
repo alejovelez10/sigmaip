@@ -34,7 +34,7 @@ end
 
 def get_rols
 
-  Rol.all
+  Rol.where(admin_doc: false)
 
 end
 end
