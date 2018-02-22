@@ -96,7 +96,7 @@
         <div class="container">
             <!-- LOGO -->
             <div class="logo">
-                <a href="home/inicio"><img class="img" src="../../img/logo.png" alt="logo" /></a>
+                <a href="/"><img class="img" src="../../img/logo.png" alt="logo" /></a>
             </div><!-- /#logo -->
             <!-- END / LOGO -->
 
@@ -113,20 +113,14 @@
             <!-- NAVIGATION -->
             <nav class="navigation nav3" data-menu-type="1199">
                   <ul class="nav text-uppercase" style="font-family: 'Rajdhani', sans-serif;">
-                    <li>
-                       <%= link_to "", root_path,  data: { turbolinks: false }%>
-                    </li>
-      
-                    <li ><%= link_to "Quiénes Somos", nosotros_path,  data: { turbolinks: false }%>
-                    </li>
-                    <li><%= link_to "Servicios", servicios_path,  data: { turbolinks: false }%></li>
-                   
+             
                   
-                    <li><%=link_to "Proyectos", noticias_path("todas"),  data: { turbolinks: false }%></li>
-                    <li><%=link_to "Gestion Doumental", contactenos_path,  data: { turbolinks: false }%></li>
-                    <li><%=link_to "Configuracion", pqrf_path,  data: { turbolinks: false }%></li>
+                    
+                    <li><%=link_to "Gestion Doumental", file_systems_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Configuracion", users_index_path("todas"),  data: { turbolinks: false } if current_user.rol.admin_doc%></li>
+                    <li><%=link_to "Configurar Pagina", services_path,  data: { turbolinks: false } if current_user.rol.admin_page%></li>
                                         <li>
-                        <%= (link_to "Pagina Web", services_path,  data: { turbolinks: false }) if current_user.rol.admin_page%>
+                     
                        
                     </li>
 
@@ -155,8 +149,8 @@
         <div class="foot-credit">
             <div class="container">
                 <ul>
-                    <li><%=link_to "Administrar", services_path,  data: { turbolinks: false }%></li>
-                    <li><%= link_to "Trabaje con nosotros", trabajemos_path,  data: { turbolinks: false }%></li>
+                    <li><%=link_to "Inicio", services_path,  data: { turbolinks: false }%></li>
+                    
      
                   
                 </ul>

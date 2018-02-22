@@ -30,4 +30,11 @@ if fecha != nil
 #dias[ds] + ", " +
 end 
 end
+
+
+def get_rols
+
+  Rol.all
+
+end
 end

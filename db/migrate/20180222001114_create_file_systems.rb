@@ -5,7 +5,7 @@ class CreateFileSystems < ActiveRecord::Migration[5.1]
       t.boolean :type_file
       t.string :file
       t.integer :level
-      t.string :folder_id
+      t.integer :folder_id
       t.integer :user_id
       t.string :code
 

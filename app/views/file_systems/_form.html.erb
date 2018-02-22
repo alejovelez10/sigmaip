@@ -1,52 +1,98 @@
-<%= form_with(model: file_system, local: true) do |form| %>
-  <% if file_system.errors.any? %>
+<div id="contact-modal" class="modal fade">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+    
+        <h4 class="modal-title">Crear <%=@type%></h4>
+      </div>
+            <%= form_with(model: @file_system, local: true) do |form| %>
+  <% if @file_system.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(file_system.errors.count, "error") %> prohibited this file_system from being saved:</h2>
 
       <ul>
-      <% file_system.errors.full_messages.each do |message| %>
+      <% @file_system.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+ <div class="modal-body">
+    <div class="row">
+<%if !@type_filev%>
 
+        <div class="col-md-6">
+            <div class="field">
+                 <%= form.label "Nombre del Archivo" %>
+                 <%= form.text_field :name, id: :file_system_name %>
+            </div>
+        </div>
+  <div class="col-md-6">
+            
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :file_system_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type_file %>
-    <%= form.check_box :type_file, id: :file_system_type_file %>
-  </div>
-
-  <div class="field">
-    <%= form.label :file %>
-    <%= form.text_field :file, id: :file_system_file %>
-  </div>
-
-  <div class="field">
-    <%= form.label :level %>
-    <%= form.number_field :level, id: :file_system_level %>
-  </div>
-
-  <div class="field">
-    <%= form.label :folder_id %>
-    <%= form.text_field :folder_id, id: :file_system_folder_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :file_system_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :code %>
+    <%= form.label "Codigo" %>
     <%= form.text_field :code, id: :file_system_code %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+        </div>
+    <%end%>     
+        
+<%if @type_filev%>
+    <div class="col-md-12">
+            <div class="field">
+                 <%= form.label "Nombre de la Carpeta" %>
+                 <%= form.text_field :name, id: :file_system_name %>
+            </div>
+ </div>
+ <%end%>
+
+<%if !@type_filev%>
+        <div class="col-md-6">
+          
+  <div class="field">
+    <%= form.label "Adjunto" %>
+    <%= form.file_field :file, id: :file_system_file %>
   </div>
+
+        </div>
+
+        <%end%>
+      
+    
+<div class="col-md-6">
+   <%= form.label "Permisos" %><br>
+               <%= form.select :rol_ids, get_rols.collect {|c| ["#{c.name}", c.id]}, {prompt: false}, {:multiple => true,class: ''} %>
+</div>
+
+    </div>
+
+
+
+  
+
+ 
+ <div class="modal-footer text-center" style="margin-top: 20px;">
+       
+        <%= submit_tag "Guardar", class: 'btn btn-primary btnpad' %><br><br>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+
+<%if action_name == "new"%>
+  <%= form.hidden_field :level, :value=>@level.to_i %>
+<%= form.hidden_field  :type_file,:value=> @type_filev%>
+<%= form.hidden_field  :folder_id ,:value=>  @folder_id.to_i%>
+<%= form.hidden_field  :user_id ,:value=>  current_user.id%>
+<%end%>
 <% end %>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.modal-footer {
+   
+    border-top: none; 
+}
+  
+</style>

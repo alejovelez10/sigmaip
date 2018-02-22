@@ -41,5 +41,9 @@ Rails.application.routes.draw do
     delete "delete_user/:id", to: "users/views#delete_user", as: "delete_user"
 
   end
+
+
+  get 'sub_folder/:level/:id', to: 'file_systems#sub_folder', as:'sub_folder'
+  post 'create_document' , to: 'file_systems#create_document', as: 'create_document'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

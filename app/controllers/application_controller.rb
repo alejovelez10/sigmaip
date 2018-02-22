@@ -32,7 +32,7 @@ protected
    
     'page' 
     
-    elsif (controller_name == 'views' || controller_name == 'rols')
+    elsif (controller_name == 'views' || controller_name == 'rols' || controller_name == 'file_systems')
 
       'intranet'
 

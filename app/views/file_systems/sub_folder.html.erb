@@ -16,7 +16,7 @@
               <ul class="nav navbar-nav navbar-left">
                   
            <li class=""><%= link_to file_systems_path do %>
-                           
+                           <i class="fa fa-folder-open"></i>
 
                             <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">SGI</span>
                            <% end %>
@@ -38,49 +38,67 @@
       </nav>
 
 
-
-
-
-
+      
 
 <div class="container  margin-top-40" style="font-family: 'Rajdhani', sans-serif;">
+    <div class="row" >
+    <%= (link_to "RAIZ", file_systems_path, style: "color: #5da9b9;
+    font-size: 20px;
+")%>
+          <%@array.each do |i|%>
+               <% file = FileSystem.where(folder_id: i).first%> 
+               <%= (link_to " / #{file.name}", sub_folder_path(file.level,file.folder_id) , style: "color: #5da9b9;
+    font-size: 20px;
+") if file.level != 0%>
+          <%end%>
+      </div>
+      <br>
    <div class="row" >
       <div class = "row title-table">
          <div class = "col-md-8">
-            <p class="title-h2" style="display:inline-block">Raiz <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
+            <p class="title-h2" style="display:inline-block"><%=@file.name%> <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
 
          
          </div>
       
          <div class = "col-md-4" style="text-align: right">
-           <%if current_user.rol.admin_doc %>
-            <%= link_to  "#{new_file_system_path}?type=carpeta&level=0&folder_id=0", remote:true, class: "btn btn-primary crear", style: "margin-right:20px;" do %>
-              <i class="fa fa-folder"> </i> Crear Folder
+             <%if current_user.rol.admin_doc %>
+            <%= link_to  "#{new_file_system_path}?type=carpeta&level=#{@level}&folder_id=#{@folder_id}", remote:true, class: "btn btn-primary crear", style: "margin-right:20px;" do %>
+            <i class="fa fa-folder"> </i> Crear Folder
             <%end%>
+            <%= link_to "#{new_file_system_path}?type=archivo&level=#{@level}&folder_id=#{@folder_id}" , remote:true, class: "btn btn-primary crear"  do %>
+  <i class="fa fa-file"></i> Crear Archivo
             <%end%>
-
+             <%end%>
          </div>
       </div>
+
+    
 <br>
 
-<div class="row" style="padding: 10px 50px;">
+<div class = "row" style="padding: 10px 50px;">
+      
+<div class="row">
        <% @file_systems.each do |file_system| %>
-       
+      
+         <%if file_system.type_file%> 
          <%= link_to  sub_folder_path(file_system.level + 1, file_system.id) do %>   
           <div class="col-md-10 folder" >
-              <div class="col-md-1">
+              <div class="col-md-2">
                   <i class="fa fa-folder"></i>
               </div>
-              <div class="col-md-11">
+              <div class="col-md-4">
                     <span><%= file_system.name %> </span>
               </div>
-              
+              <div class="col-md-6">
+                     
+              </div>
               
               <% end %>
             
           </div>
             <div class="col-md-2">
-                    <%if current_user.rol.admin_doc %>    
+          <%if current_user.rol.admin_doc %>             
         <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
                     
                      <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
@@ -93,10 +111,51 @@
                 <% end %>
                 <% end %>
               </div>
-           <% end %>
-           
-       
+          <%else%>
+
+          <div class="col-md-10 file">
+              <div class="col-md-1">
+                  <i class="fa fa-file"></i>
+              </div>
+              <div class="col-md-5">
+                   <span> <%= file_system.name %></span>
+              </div>
+              <div class="col-md-2">
+                   <span> <%= file_system.code %></span>
+              </div>
+              <div class="col-md-4">
+                      <%if file_system.file_url  %>
+        <%= link_to  file_system.file_url , class: "btn btn-primary", target: "_blank" do%>
+        <i class="fa fa-download" style="color:white"></i>
+           Descargar
+          <%end%>
+          <%end%>
+              </div>
+
+          </div>
+                <div class="col-md-2">
+                  <%if current_user.rol.admin_doc %>
+                     <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+                    
+                     <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
+
+                <% end %>
+                <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
+                    <i class="fa fa-trash" style = "font-size:20px;" aria-hidden="true"></i>
+
+                    
+                <% end %>
+                <% end %>
+              </div>
+
+    
+          <%end%>
+         
+       <% end %>
 </div>
+
+
+  </div>
    </div>
 </div>
 
@@ -104,8 +163,11 @@
 
 
 
-<style>
 
+
+
+
+<style>
 
 .folder
 
@@ -148,6 +210,7 @@
 
 
 
+
 .btn {
     position: relative;
     font-size: 13px;
@@ -157,7 +220,7 @@
     white-space: normal;
     padding: 5px 9px;
     letter-spacing: 0px;
-   font-family: 'Rajdhani', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
