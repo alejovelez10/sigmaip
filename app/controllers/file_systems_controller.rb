@@ -1,6 +1,6 @@
 class FileSystemsController < ApplicationController
   before_action :set_file_system, only: [:show, :edit, :update, :destroy]
-
+    before_action :authenticate_user!
   # GET /file_systems
   # GET /file_systems.json
   def index
