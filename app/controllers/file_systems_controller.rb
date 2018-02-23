@@ -130,9 +130,24 @@ class FileSystemsController < ApplicationController
   # DELETE /file_systems/1
   # DELETE /file_systems/1.json
   def destroy
+    @fs = @file_system.level
+    @fs1 = @file_system.folder_id
+    @fs2 = FileSystem.where("level > ?" , @file_system.level)
+
+    @fs2.each do |i| 
+        @array = []
+        @array = i.route.split(",").map { |s| s.to_i }
+         if @array.include?(@file_system.id)
+          FileSystem.find(i.id).destroy
+        end
+    end
+    puts FileSystem.where()
     @file_system.destroy
     respond_to do |format|
-      format.html { redirect_to file_systems_url, notice: 'File system was successfully destroyed.' }
+      format.html { redirect_to (@file_system.level == 0 ? file_systems_path : sub_folder_path(@fs, @fs1)) , notice: 'File system was successfully created.' 
+
+
+        }
       format.json { head :no_content }
     end
   end

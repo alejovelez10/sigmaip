@@ -1,259 +1,188 @@
 <nav class="navbar navbar-default first-navbar">
-         <div class="container-fluid">
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-         
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <ul class="nav navbar-nav">
-                                
-          
-
-                        
-                  
-             
-               </ul>
-              <ul class="nav navbar-nav navbar-left">
-                  
-           <li class=""><%= link_to file_systems_path do %>
-                           <i class="fa fa-folder-open"></i>
-
-                            <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">SGI</span>
-                           <% end %>
-                        </li>
-
-
-               </ul>
-               <!--<form class="navbar-form navbar-left">
-                  <div class="form-group">
-                     <input type="text" class="form-control" placeholder="Search">
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-               </form>-->
-              
+   <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+         </ul>
+         <ul class="nav navbar-nav navbar-left">
+            <li class=""><%= link_to file_systems_path do %>
+               <i class="fa fa-folder-open"></i>
+               <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">SGI</span>
+               <% end %>
+            </li>
+         </ul>
+         <!--<form class="navbar-form navbar-left">
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <!-- /.navbar-collapse -->
-         </div>
-         <!-- /.container-fluid -->
-      </nav>
-
-
-      
-
-<div class="container  margin-top-40" style="font-family: 'Rajdhani', sans-serif;">
-    <div class="row" >
-    <%= (link_to "RAIZ", file_systems_path, style: "color: #5da9b9;
-    font-size: 20px;
-")%>
-          <%@array.each do |i|%>
-               <% file = FileSystem.where(folder_id: i).first%> 
-               <%= (link_to " / #{file.name}", sub_folder_path(file.level,file.folder_id) , style: "color: #5da9b9;
-    font-size: 20px;
-") if file.level != 0%>
-          <%end%>
+            <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
       </div>
-      <br>
+      <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container-fluid -->
+</nav>
+<div class="container  margin-top-40" style="font-family: 'Rajdhani', sans-serif;">
+   <div class="row" >
+      <%= (link_to "RAIZ", file_systems_path, style: "color: #5da9b9;
+         font-size: 15px;
+         ")%>
+      <%@array.each do |i|%>
+       <%if i != 0%>
+      <% file = FileSystem.find(i)%> 
+      <%= (link_to " / #{file.name}", sub_folder_path((file.level + 1),file.id) , style: "color: #5da9b9;
+         font-size: 15px;
+         ") %>
+         <%end%>
+      <%end%>
+   </div>
+   <br>
    <div class="row" >
       <div class = "row title-table">
          <div class = "col-md-8">
             <p class="title-h2" style="display:inline-block"><%=@file.name%> <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
-               <div class="form-group fil" >
-         <%= form_tag(sub_folder_path, :method => "get", id: "search-form") do %>
-   
-  <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
- 
-
-  
-      
-         <%= submit_tag "Buscar", :class => "btn btn-primary search1" %>
-          
-    
-         <% end %>
-      </div>
-         
+            <div class="form-group fil" >
+               <%= form_tag(sub_folder_path, :method => "get", id: "search-form") do %>
+               <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
+               <%= submit_tag "Buscar", :class => "btn btn-primary search1" %>
+               <% end %>
+            </div>
          </div>
-      
          <div class = "col-md-4" style="text-align: right">
-             <%if current_user.rol.admin_doc %>
+            <%if current_user.rol.admin_doc %>
             <%= link_to  "#{new_file_system_path}?type=carpeta&level=#{@level}&folder_id=#{@folder_id}", remote:true, class: "btn btn-primary crear", style: "margin-right:20px;" do %>
             <i class="fa fa-folder"> </i> Crear Folder
             <%end%>
             <%= link_to "#{new_file_system_path}?type=archivo&level=#{@level}&folder_id=#{@folder_id}" , remote:true, class: "btn btn-primary crear"  do %>
-  <i class="fa fa-file"></i> Crear Archivo
+            <i class="fa fa-file"></i> Crear Archivo
             <%end%>
-             <%end%>
+            <%end%>
          </div>
       </div>
-
-    
-<br>
-
-<div class = "row" style="padding: 10px 50px;">
-      
-<div class="row">
-       <% @file_systems.each do |file_system| %>
-      
-         <%if file_system.type_file%> 
-         <%= link_to  sub_folder_path(file_system.level + 1, file_system.id) do %>   
-          <div class="col-md-10 folder" >
-              <div class="col-md-1">
+      <br>
+      <div class = "row" style="padding: 10px 50px;">
+         <div class="row">
+            <% @file_systems.each do |file_system| %>
+            <%if file_system.type_file%> 
+            <%= link_to  sub_folder_path(file_system.level + 1, file_system.id) do %>   
+            <div class="col-md-10 folder" >
+               <div class="col-md-1">
                   <i class="fa fa-folder"></i>
-              </div>
-              <div class="col-md-4">
-                    <span><%= file_system.name %> </span>
-              </div>
-              <div class="col-md-6">
-                     
-              </div>
-              
-              <% end %>
-            
-          </div>
+               </div>
+               <div class="col-md-4">
+                  <span><%= file_system.name %> </span>
+               </div>
+               <div class="col-md-6">
+               </div>
+               <% end %>
+            </div>
             <div class="col-md-2">
-          <%if current_user.rol.admin_doc %>             
-        <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
-                    
-                     <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
-
-                <% end %>
-                <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
-                    <i class="fa fa-trash" style = "font-size:20px;" aria-hidden="true"></i>
-
-                    
-                <% end %>
-                <% end %>
-              </div>
-          <%else%>
-
-          <div class="col-md-10 file">
-              <div class="col-md-1">
+               <%if current_user.rol.admin_doc %>             
+               <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+               <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
+               <% end %>
+               <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
+               <i class="fa fa-trash" style = "font-size:20px;" aria-hidden="true"></i>
+               <% end %>
+               <% end %>
+            </div>
+            <%else%>
+            <div class="col-md-10 file">
+               <div class="col-md-1">
                   <i class="fa fa-file"></i>
-              </div>
-              <div class="col-md-5">
-                   <span> <%= file_system.name %></span>
-              </div>
-              <div class="col-md-2">
-                   <span> <%= file_system.code %></span>
-              </div>
-              <div class="col-md-4">
-                      <%if file_system.file_url  %>
-        <%= link_to  file_system.file_url , class: "btn btn-primary", target: "_blank" do%>
-        <i class="fa fa-download" style="color:white"></i>
-           Descargar
-          <%end%>
-          <%end%>
-              </div>
-
-          </div>
-                <div class="col-md-2">
-                  <%if current_user.rol.admin_doc %>
-                     <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
-                    
-                     <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
-
-                <% end %>
-                <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
-                    <i class="fa fa-trash" style = "font-size:20px;" aria-hidden="true"></i>
-
-                    
-                <% end %>
-                <% end %>
-              </div>
-
-    
-          <%end%>
-         
-       <% end %>
-</div>
-
-
-  </div>
+               </div>
+               <div class="col-md-5">
+                  <span> <%= file_system.name %></span>
+               </div>
+               <div class="col-md-2">
+                  <span> <%= file_system.code %></span>
+               </div>
+               <div class="col-md-4">
+                  <%if file_system.file_url  %>
+                  <%= link_to  file_system.file_url , class: "btn btn-primary", target: "_blank" do%>
+                  <i class="fa fa-download" style="color:white"></i>
+                  Descargar
+                  <%end%>
+                  <%end%>
+               </div>
+            </div>
+            <div class="col-md-2">
+               <%if current_user.rol.admin_doc %>
+               <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+               <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
+               <% end %>
+               <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
+               <i class="fa fa-trash" style = "font-size:20px;" aria-hidden="true"></i>
+               <% end %>
+               <% end %>
+            </div>
+            <%end%>
+            <% end %>
+         </div>
+      </div>
    </div>
 </div>
-
-
-
-
-
-
-
-
-
 <style>
-
-.folder
-
-{
-
-      padding: 5px;
-    font-size: 20px;
-    background: rgb(62, 133, 170);
-    color: white;
-    margin-bottom: 5px;
-}
-.folder i
-{
-  color:white;
-}
-.folder span
-{
-  color:white !important;
-}
-
-
-.file
-
-{
-
-      padding: 5px;
-    font-size: 15px;
-       background: whitesmoke;
-    margin-bottom: 5px;
-}
-
-.file i
-{
- color: #2f88b9;
-}
-.file span
-{
- color: #2f88b9;
-}
-
-
-
-
-.btn {
-    position: relative;
-    font-size: 13px;
-    text-transform: uppercase;
-    display: inline-block;
-    border: 0;
-    white-space: normal;
-    padding: 5px 9px;
-    letter-spacing: 0px;
-    font-family: 'Rajdhani', sans-serif;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    border-radius: 0;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
+   .folder
+   {
+   padding: 5px;
+   font-size: 20px;
+   background: rgb(62, 133, 170);
+   color: white;
+   margin-bottom: 5px;
+   }
+   .folder i
+   {
+   color:white;
+   }
+   .folder span
+   {
+   color:white !important;
+   }
+   .file
+   {
+   padding: 5px;
+   font-size: 15px;
+   background: whitesmoke;
+   margin-bottom: 5px;
+   }
+   .file i
+   {
+   color: #2f88b9;
+   }
+   .file span
+   {
+   color: #2f88b9;
+   }
+   .btn {
+   position: relative;
+   font-size: 13px;
+   text-transform: uppercase;
+   display: inline-block;
+   border: 0;
+   white-space: normal;
+   padding: 5px 9px;
+   letter-spacing: 0px;
+   font-family: 'Rajdhani', sans-serif;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   -ms-border-radius: 0;
+   border-radius: 0;
+   -webkit-transition: all 0.4s ease;
+   -moz-transition: all 0.4s ease;
+   -ms-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+   }
    .label {
-   
-    padding: 0px 10px;
-
-}
-p {
-    font-size: 14px;
-    line-height: 0;
-    color: #444;
-}
-
-.search
+   padding: 0px 10px;
+   }
+   p {
+   font-size: 14px;
+   line-height: 0;
+   color: #444;
+   }
+   .search
    {
    width:200px !important;
    height: 35px!important;
@@ -267,19 +196,15 @@ p {
    }
    .fil
    {
-        position: relative;
-    top: -22px;
-    display: inline-block;
+   position: relative;
+   top: -22px;
+   display: inline-block;
    }
-
    @media only screen and (max-width:592px) {
-   
-      .fil
+   .fil
    {
-        position: relative;
-    top: 0px;
+   position: relative;
+   top: 0px;
    }
-
    }
-
 </style>
