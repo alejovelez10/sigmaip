@@ -7,8 +7,8 @@
          </ul>
          <ul class="nav navbar-nav navbar-left">
             <li class=""><%= link_to file_systems_path do %>
-               <i class="fa fa-folder-open"></i>
-               <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">SGI</span>
+            
+               <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">GESTION DOCUMENTAL</span>
                <% end %>
             </li>
          </ul>
@@ -23,7 +23,7 @@
    </div>
    <!-- /.container-fluid -->
 </nav>
-<div class="container  margin-top-40" style="font-family: 'Rajdhani', sans-serif;">
+<div class="container  margin-top-20" style="font-family: 'Rajdhani', sans-serif;">
    <div class="row" >
       <%= (link_to "RAIZ", file_systems_path, style: "color: #5da9b9;
          font-size: 15px;
@@ -36,6 +36,8 @@
          ") %>
          <%end%>
       <%end%>
+      / <span style="color:#5da9b9"><%=@file.name%></span>
+        
    </div>
    <br>
    <div class="row" >
@@ -79,7 +81,7 @@
             </div>
             <div class="col-md-2">
                <%if current_user.rol.admin_doc %>             
-               <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+               <%= link_to    "#{edit_file_system_path(file_system)}?type=carpeta",remote: true,  :class => "btn btn-primary" do %>
                <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
                <% end %>
                <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
@@ -109,7 +111,7 @@
             </div>
             <div class="col-md-2">
                <%if current_user.rol.admin_doc %>
-               <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+               <%= link_to    "#{edit_file_system_path(file_system)}?type=archivo",remote: true,  :class => "btn btn-primary" do %>
                <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
                <% end %>
                <%= link_to file_system,method: :delete, data: { confirm: '¿Estas Seguro?' }, :class => "btn btn-danger" do %>
@@ -124,14 +126,13 @@
    </div>
 </div>
 <style>
-   .folder
-   {
-   padding: 5px;
-   font-size: 20px;
-   background: rgb(62, 133, 170);
-   color: white;
-   margin-bottom: 5px;
-   }
+   .folder {
+    padding: 5px;
+    font-size: 17px;
+    background: rgb(62, 133, 170);
+    color: white;
+    margin-bottom: 5px;
+}
    .folder i
    {
    color:white;

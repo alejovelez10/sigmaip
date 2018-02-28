@@ -18,7 +18,7 @@
            <li class=""><%= link_to file_systems_path do %>
                            
 
-                            <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">SGI</span>
+                            <span class = "color-gray hidden-xs hidden-sm" style="font-size:20px;font-family: 'Rajdhani', sans-serif;">GESTION DOCUMENTAL</span>
                            <% end %>
                         </li>
 
@@ -94,7 +94,7 @@
           </div>
             <div class="col-md-2">
                     <%if current_user.rol.admin_doc %>    
-        <%= link_to   edit_file_system_path(file_system),remote: true,  :class => "btn btn-primary" do %>
+        <%= link_to   "#{edit_file_system_path(file_system)}?type=carpeta",remote: true,  :class => "btn btn-primary" do %>
                     
                      <i class="fa fa-pencil" style = "font-size:20px;" aria-hidden="true"></i>
 
@@ -125,7 +125,7 @@
 {
 
       padding: 5px;
-    font-size: 20px;
+    font-size: 17px;
     background: rgb(62, 133, 170);
     color: white;
     margin-bottom: 5px;

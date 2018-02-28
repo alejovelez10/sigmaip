@@ -76,6 +76,11 @@ class FileSystemsController < ApplicationController
 
   # GET /file_systems/1/edit
   def edit
+      @type = params[:type]
+     @type_filev = false
+    @level = params[:level]
+    @folder_id = params[:folder_id]
+    @type == "carpeta" ? @type_filev = true : @type_filev = false 
   end
 
   # POST /file_systems
