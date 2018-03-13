@@ -49,7 +49,25 @@
          <div class = "col-md-8">
             <p class="title-h2" style="display:inline-block">Raiz <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
              
-              <div class="form-group fil" >
+             
+         
+         </div>
+      
+         <div class = "col-md-4" style="text-align: right">
+           <%if current_user.rol.admin_doc %>
+            <%= link_to  "#{new_file_system_path}?type=carpeta&level=0&folder_id=0", remote:true, class: "btn1 btn-primary crear", style: "margin-right:20px;" do %>
+              <i class="fa fa-folder"> </i> Crear Folder
+            <%end%>
+            <%end%>
+
+         </div>
+      </div>
+     <br>
+
+<div class="row" style="padding: 0px 50px;">
+
+  <div class="col-md-10" style="padding: 1px">
+     <div class="" >
          <%= form_tag(file_systems_path, :method => "get", id: "search-form") do %>
    
   <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
@@ -62,27 +80,29 @@
     
          <% end %>
       </div>
-         
-         </div>
+
+ 
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="col-md-1">
+              
+            </div>
+            <div class="col-md-11">
+              
+            </div>
+        </div>
       
-         <div class = "col-md-4" style="text-align: right">
-           <%if current_user.rol.admin_doc %>
-            <%= link_to  "#{new_file_system_path}?type=carpeta&level=0&folder_id=0", remote:true, class: "btn btn-primary crear", style: "margin-right:20px;" do %>
-              <i class="fa fa-folder"> </i> Crear Folder
-            <%end%>
-            <%end%>
-
-         </div>
-      </div>
-<br>
-
-<div class="row" style="padding: 10px 50px;">
+    </div>
+</div>
+<div class="row" style="padding: 5px 50px;">
+      
        <% @file_systems.each do |file_system| %>
        
          <%= link_to  sub_folder_path(file_system.level + 1, file_system.id) do %>   
           <div class="col-md-10 folder" >
               <div class="col-md-1">
-                  <i class="fa fa-folder"></i>
+                  <i class="fa fa-folder"  style = "font-size:20px;" ></i>
               </div>
               <div class="col-md-11">
                     <span><%= file_system.name %> </span>
@@ -124,19 +144,19 @@
 
 {
 
-      padding: 5px;
-    font-size: 17px;
-    background: rgb(62, 133, 170);
+      padding: 1px;
+    font-size: 15px;
+    background: #f2f2f2;
     color: white;
     margin-bottom: 5px;
 }
 .folder i
 {
-  color:white;
+  color:#dcae36;
 }
 .folder span
 {
-  color:white !important;
+  color:gray !important;
 }
 
 
@@ -144,7 +164,7 @@
 
 {
 
-      padding: 5px;
+      padding: 0px;
     font-size: 15px;
        background: whitesmoke;
     margin-bottom: 5px;
@@ -156,10 +176,30 @@
 }
 .file span
 {
- color: #2f88b9;
+ color: #9c9c9c;
 }
 
 
+
+.btn1 {
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 0;
+    white-space: normal;
+    padding: 5px 9px;
+    letter-spacing: 0px;
+   font-family: 'Rajdhani', sans-serif;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
 
 .btn {
     position: relative;
@@ -168,7 +208,7 @@
     display: inline-block;
     border: 0;
     white-space: normal;
-    padding: 5px 9px;
+    padding: 0px 9px;
     letter-spacing: 0px;
    font-family: 'Rajdhani', sans-serif;
     -webkit-border-radius: 0;
@@ -190,7 +230,10 @@ p {
     line-height: 0;
     color: #444;
 }
-
+input
+{
+  border-radius: 0px !important;
+}
 .search
    {
    width:200px !important;
@@ -205,9 +248,7 @@ p {
    }
    .fil
    {
-        position: relative;
-    top: -16px;
-    display: inline-block;
+       
    }
 
    @media only screen and (max-width:592px) {

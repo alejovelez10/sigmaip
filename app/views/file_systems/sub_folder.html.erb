@@ -40,37 +40,43 @@
         
    </div>
    <br>
+
    <div class="row" >
       <div class = "row title-table">
          <div class = "col-md-8">
             <p class="title-h2" style="display:inline-block"><%=@file.name%> <span class="label label-primary"><%=@file_systems.count%></span> <span style = "font-size:12px;margin-left:20px;"> </span> </p>
-            <div class="form-group fil" >
-               <%= form_tag(sub_folder_path, :method => "get", id: "search-form") do %>
-               <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
-               <%= submit_tag "Buscar", :class => "btn btn-primary search1" %>
-               <% end %>
-            </div>
+            
          </div>
          <div class = "col-md-4" style="text-align: right">
             <%if current_user.rol.admin_doc %>
-            <%= link_to  "#{new_file_system_path}?type=carpeta&level=#{@level}&folder_id=#{@folder_id}", remote:true, class: "btn btn-primary crear", style: "margin-right:20px;" do %>
+            <%= link_to  "#{new_file_system_path}?type=carpeta&level=#{@level}&folder_id=#{@folder_id}", remote:true, class: "btn1 btn-primary crear", style: "margin-right:20px;" do %>
             <i class="fa fa-folder"> </i> Crear Folder
             <%end%>
-            <%= link_to "#{new_file_system_path}?type=archivo&level=#{@level}&folder_id=#{@folder_id}" , remote:true, class: "btn btn-primary crear"  do %>
+            <%= link_to "#{new_file_system_path}?type=archivo&level=#{@level}&folder_id=#{@folder_id}" , remote:true, class: "btn1 btn-primary crear"  do %>
             <i class="fa fa-file"></i> Crear Archivo
             <%end%>
             <%end%>
          </div>
       </div>
       <br>
-      <div class = "row" style="padding: 10px 50px;">
+       <div class="row">
+      
+   
+    <div class="form-group" style="padding: 0px 50px;">
+               <%= form_tag(sub_folder_path, :method => "get", id: "search-form") do %>
+               <%= text_field_tag :search, params[:search], placeholder: "Nombre", class: "form-control search" %>
+               <%= submit_tag "Buscar", :class => "btn btn-primary search1" %>
+               <% end %>
+            </div>
+   </div>
+      <div class = "row" style="padding: 0px 50px;">
          <div class="row">
             <% @file_systems.each do |file_system| %>
             <%if file_system.type_file%> 
             <%= link_to  sub_folder_path(file_system.level + 1, file_system.id) do %>   
             <div class="col-md-10 folder" >
                <div class="col-md-1">
-                  <i class="fa fa-folder"></i>
+                  <i class="fa fa-folder" style = "font-size:20px;" ></i>
                </div>
                <div class="col-md-4">
                   <span><%= file_system.name %> </span>
@@ -92,7 +98,7 @@
             <%else%>
             <div class="col-md-10 file">
                <div class="col-md-1">
-                  <i class="fa fa-file"></i>
+                  <i class="fa fa-file" ></i>
                </div>
                <div class="col-md-5">
                   <span> <%= file_system.name %></span>
@@ -126,55 +132,88 @@
    </div>
 </div>
 <style>
-   .folder {
-    padding: 5px;
-    font-size: 17px;
-    background: rgb(62, 133, 170);
+   input
+   {
+      border-radius: 0px !important;
+   }
+.folder
+
+{
+
+      padding: 2px;
+    font-size: 15px;
+    background: #f2f2f2;
     color: white;
     margin-bottom: 5px;
 }
-   .folder i
-   {
-   color:white;
-   }
-   .folder span
-   {
-   color:white !important;
-   }
-   .file
-   {
-   padding: 5px;
-   font-size: 15px;
-   background: whitesmoke;
-   margin-bottom: 5px;
-   }
-   .file i
-   {
-   color: #2f88b9;
-   }
-   .file span
-   {
-   color: #2f88b9;
-   }
-   .btn {
-   position: relative;
-   font-size: 13px;
-   text-transform: uppercase;
-   display: inline-block;
-   border: 0;
-   white-space: normal;
-   padding: 5px 9px;
-   letter-spacing: 0px;
+.folder i
+{
+  color:#dcae36;
+}
+.folder span
+{
+  color:gray !important;
+}
+
+
+.file
+
+{
+
+      padding: 2px;
+    font-size: 15px;
+       background: whitesmoke;
+    margin-bottom: 5px;
+}
+
+.file i
+{
+ color: #2f88b9;
+}
+.file span
+{
+ color: #9c9c9c;
+}
+
+   .btn1 {
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 0;
+    white-space: normal;
+    padding: 5px 9px;
+    letter-spacing: 0px;
    font-family: 'Rajdhani', sans-serif;
-   -webkit-border-radius: 0;
-   -moz-border-radius: 0;
-   -ms-border-radius: 0;
-   border-radius: 0;
-   -webkit-transition: all 0.4s ease;
-   -moz-transition: all 0.4s ease;
-   -ms-transition: all 0.4s ease;
-   transition: all 0.4s ease;
-   }
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.btn {
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 0;
+    white-space: normal;
+    padding: 0px 9px;
+    letter-spacing: 0px;
+   font-family: 'Rajdhani', sans-serif;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
    .label {
    padding: 0px 10px;
    }
